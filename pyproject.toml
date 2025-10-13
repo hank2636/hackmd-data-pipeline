@@ -1,0 +1,29 @@
+[project]
+name = "hackmd-data-pipeline"
+version = "0.1.0"
+description = "Data pipeline project to extract, transform, and load arXiv data to S3"
+authors = [
+    { name = "Yang Hank", email = "your_email@example.com" }
+]
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+    "requests==2.32.3",
+    "urllib3==2.2.3",
+    "pandas==2.2.3",
+    "numpy==1.26.4",
+    "boto3==1.35.50",
+    "botocore==1.35.50",
+    "python-dotenv==1.0.1",
+    "loguru==0.7.2",
+    "schedule==1.2.1",
+    "pytest==8.3.2",
+    "pytest-cov==5.0.0",
+    "pydantic==2.9.2",
+    "sqlalchemy==2.0.36",
+    "cachetools==5.5.0",
+    "tqdm==4.66.5",
+    "black==24.8.0",
+    "arxiv>=2.2.0",
+]

@@ -1,0 +1,175 @@
+[
+  {
+    "id": "http://arxiv.org/abs/2510.09578v1",
+    "title": "Three Birds with One Stone: Improving Performance, Convergence, and System Throughput with Nest",
+    "authors": [
+      "Yuqian Huo",
+      "David Quiroga",
+      "Anastasios Kyrillidis",
+      "Tirthak Patel"
+    ],
+    "summary": "Variational quantum algorithms (VQAs) have the potential to demonstrate\nquantum utility on near-term quantum computers. However, these algorithms often\nget executed on the highest-fidelity qubits and computers to achieve the best\nperformance, causing low system throughput. Recent efforts have shown that VQAs\ncan be run on low-fidelity qubits initially and high-fidelity qubits later on\nto still achieve good performance. We take this effort forward and show that\ncarefully varying the qubit fidelity map of the VQA over its execution using\nour technique, Nest, does not just (1) improve performance (i.e., help achieve\nclose to optimal results), but also (2) lead to faster convergence. We also use\nNest to co-locate multiple VQAs concurrently on the same computer, thus (3)\nincreasing the system throughput, and therefore, balancing and optimizing three\nconflicting metrics simultaneously.",
+    "categories": [
+      "quant-ph",
+      "cs.ET",
+      "cs.LG"
+    ],
+    "published": "2025-10-10T17:30:58+00:00"
+  },
+  {
+    "id": "http://arxiv.org/abs/2510.09577v1",
+    "title": "Dyna-Mind: Learning to Simulate from Experience for Better AI Agents",
+    "authors": [
+      "Xiao Yu",
+      "Baolin Peng",
+      "Michel Galley",
+      "Hao Cheng",
+      "Qianhui Wu",
+      "Janardhan Kulkarni",
+      "Suman Nath",
+      "Zhou Yu",
+      "Jianfeng Gao"
+    ],
+    "summary": "Reasoning models have recently shown remarkable progress in domains such as\nmath and coding. However, their expert-level abilities in math and coding\ncontrast sharply with their performance in long-horizon, interactive tasks such\nas web navigation and computer/phone-use. Inspired by literature on human\ncognition, we argue that current AI agents need ''vicarious trial and error'' -\nthe capacity to mentally simulate alternative futures before acting - in order\nto enhance their understanding and performance in complex interactive\nenvironments. We introduce Dyna-Mind, a two-stage training framework that\nexplicitly teaches (V)LM agents to integrate such simulation into their\nreasoning. In stage 1, we introduce Reasoning with Simulations (ReSim), which\ntrains the agent to generate structured reasoning traces from expanded search\ntrees built from real experience gathered through environment interactions.\nReSim thus grounds the agent's reasoning in faithful world dynamics and equips\nit with the ability to anticipate future states in its reasoning. In stage 2,\nwe propose Dyna-GRPO, an online reinforcement learning method to further\nstrengthen the agent's simulation and decision-making ability by using both\noutcome rewards and intermediate states as feedback from real rollouts.\nExperiments on two synthetic benchmarks (Sokoban and ALFWorld) and one\nrealistic benchmark (AndroidWorld) demonstrate that (1) ReSim effectively\ninfuses simulation ability into AI agents, and (2) Dyna-GRPO leverages outcome\nand interaction-level signals to learn better policies for long-horizon,\nplanning-intensive tasks. Together, these results highlight the central role of\nsimulation in enabling AI agents to reason, plan, and act more effectively in\nthe ever more challenging environments.",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.CV"
+    ],
+    "published": "2025-10-10T17:30:18+00:00"
+  },
+  {
+    "id": "http://arxiv.org/abs/2510.09574v1",
+    "title": "Zero-shot Structure Learning and Planning for Autonomous Robot Navigation using Active Inference",
+    "authors": [
+      "Daria de tinguy",
+      "Tim Verbelen",
+      "Emilio Gamba",
+      "Bart Dhoedt"
+    ],
+    "summary": "Autonomous navigation in unfamiliar environments requires robots to\nsimultaneously explore, localise, and plan under uncertainty, without relying\non predefined maps or extensive training. We present a biologically inspired,\nActive Inference-based framework, Active Inference MAPping and Planning\n(AIMAPP). This model unifies mapping, localisation, and decision-making within\na single generative model. Inspired by hippocampal navigation, it uses\ntopological reasoning, place-cell encoding, and episodic memory to guide\nbehaviour. The agent builds and updates a sparse topological map online, learns\nstate transitions dynamically, and plans actions by minimising Expected Free\nEnergy. This allows it to balance goal-directed and exploratory behaviours. We\nimplemented a ROS-compatible navigation system that is sensor and\nrobot-agnostic, capable of integrating with diverse hardware configurations. It\noperates in a fully self-supervised manner, is resilient to drift, and supports\nboth exploration and goal-directed navigation without any pre-training. We\ndemonstrate robust performance in large-scale real and simulated environments\nagainst state-of-the-art planning models, highlighting the system's\nadaptability to ambiguous observations, environmental changes, and sensor\nnoise. The model offers a biologically inspired, modular solution to scalable,\nself-supervised navigation in unstructured settings. AIMAPP is available at\nhttps://github.com/decide-ugent/AIMAPP.",
+    "categories": [
+      "cs.RO"
+    ],
+    "published": "2025-10-10T17:28:12+00:00"
+  },
+  {
+    "id": "http://arxiv.org/abs/2510.09566v1",
+    "title": "Automated Evolutionary Optimization for Resource-Efficient Neural Network Training",
+    "authors": [
+      "Ilia Revin",
+      "Leon Strelkov",
+      "Vadim A. Potemkin",
+      "Ivan Kireev",
+      "Andrey Savchenko"
+    ],
+    "summary": "There are many critical challenges in optimizing neural network models,\nincluding distributed computing, compression techniques, and efficient\ntraining, regardless of their application to specific tasks. Solving such\nproblems is crucial because the need for scalable and resource-efficient models\nis increasing. To address these challenges, we have developed a new automated\nmachine learning (AutoML) framework, Parameter Efficient Training with Robust\nAutomation (PETRA). It applies evolutionary optimization to model architecture\nand training strategy. PETRA includes pruning, quantization, and loss\nregularization. Experimental studies on real-world data with financial event\nsequences, as well as image and time-series -- benchmarks, demonstrate PETRA's\nability to improve neural model performance and scalability -- namely, a\nsignificant decrease in model size (up to 75%) and latency (up to 33%), and an\nincrease in throughput (by 13%) without noticeable degradation in the target\nmetric.",
+    "categories": [
+      "cs.LG"
+    ],
+    "published": "2025-10-10T17:17:49+00:00"
+  },
+  {
+    "id": "http://arxiv.org/abs/2510.09561v1",
+    "title": "TC-LoRA: Temporally Modulated Conditional LoRA for Adaptive Diffusion Control",
+    "authors": [
+      "Minkyoung Cho",
+      "Ruben Ohana",
+      "Christian Jacobsen",
+      "Adityan Jothi",
+      "Min-Hung Chen",
+      "Z. Morley Mao",
+      "Ethem Can"
+    ],
+    "summary": "Current controllable diffusion models typically rely on fixed architectures\nthat modify intermediate activations to inject guidance conditioned on a new\nmodality. This approach uses a static conditioning strategy for a dynamic,\nmulti-stage denoising process, limiting the model's ability to adapt its\nresponse as the generation evolves from coarse structure to fine detail. We\nintroduce TC-LoRA (Temporally Modulated Conditional LoRA), a new paradigm that\nenables dynamic, context-aware control by conditioning the model's weights\ndirectly. Our framework uses a hypernetwork to generate LoRA adapters\non-the-fly, tailoring weight modifications for the frozen backbone at each\ndiffusion step based on time and the user's condition. This mechanism enables\nthe model to learn and execute an explicit, adaptive strategy for applying\nconditional guidance throughout the entire generation process. Through\nexperiments on various data domains, we demonstrate that this dynamic,\nparametric control significantly enhances generative fidelity and adherence to\nspatial conditions compared to static, activation-based methods. TC-LoRA\nestablishes an alternative approach in which the model's conditioning strategy\nis modified through a deeper functional adaptation of its weights, allowing\ncontrol to align with the dynamic demands of the task and generative stage.",
+    "categories": [
+      "cs.CV"
+    ],
+    "published": "2025-10-10T17:13:02+00:00"
+  },
+  {
+    "id": "http://arxiv.org/abs/2510.09551v1",
+    "title": "Titans Revisited: A Lightweight Reimplementation and Critical Analysis of a Test-Time Memory Model",
+    "authors": [
+      "Gavriel Di Nepi",
+      "Federico Siciliano",
+      "Fabrizio Silvestri"
+    ],
+    "summary": "By the end of 2024, Google researchers introduced Titans: Learning at Test\nTime, a neural memory model achieving strong empirical results across multiple\ntasks. However, the lack of publicly available code and ambiguities in the\noriginal description hinder reproducibility. In this work, we present a\nlightweight reimplementation of Titans and conduct a comprehensive evaluation\non Masked Language Modeling, Time Series Forecasting, and Recommendation tasks.\nOur results reveal that Titans does not always outperform established baselines\ndue to chunking. However, its Neural Memory component consistently improves\nperformance compared to attention-only models. These findings confirm the\nmodel's innovative potential while highlighting its practical limitations and\nraising questions for future research.",
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "published": "2025-10-10T17:03:24+00:00"
+  },
+  {
+    "id": "http://arxiv.org/abs/2510.09543v1",
+    "title": "Guiding Energy-Efficient Locomotion through Impact Mitigation Rewards",
+    "authors": [
+      "Chenghao Wang",
+      "Arjun Viswanathan",
+      "Eric Sihite",
+      "Alireza Ramezani"
+    ],
+    "summary": "Animals achieve energy-efficient locomotion by their implicit passive\ndynamics, a marvel that has captivated roboticists for decades.Recently,\nmethods incorporated Adversarial Motion Prior (AMP) and Reinforcement learning\n(RL) shows promising progress to replicate Animals' naturalistic motion.\nHowever, such imitation learning approaches predominantly capture explicit\nkinematic patterns, so-called gaits, while overlooking the implicit passive\ndynamics. This work bridges this gap by incorporating a reward term guided by\nImpact Mitigation Factor (IMF), a physics-informed metric that quantifies a\nrobot's ability to passively mitigate impacts. By integrating IMF with AMP, our\napproach enables RL policies to learn both explicit motion trajectories from\nanimal reference motion and the implicit passive dynamic. We demonstrate energy\nefficiency improvements of up to 32%, as measured by the Cost of Transport\n(CoT), across both AMP and handcrafted reward structure.",
+    "categories": [
+      "cs.RO"
+    ],
+    "published": "2025-10-10T16:56:35+00:00"
+  },
+  {
+    "id": "http://arxiv.org/abs/2510.09541v1",
+    "title": "SPG: Sandwiched Policy Gradient for Masked Diffusion Language Models",
+    "authors": [
+      "Chengyu Wang",
+      "Paria Rashidinejad",
+      "DiJia Su",
+      "Song Jiang",
+      "Sid Wang",
+      "Siyan Zhao",
+      "Cai Zhou",
+      "Shannon Zejiang Shen",
+      "Feiyu Chen",
+      "Tommi Jaakkola",
+      "Yuandong Tian",
+      "Bo Liu"
+    ],
+    "summary": "Diffusion large language models (dLLMs) are emerging as an efficient\nalternative to autoregressive models due to their ability to decode multiple\ntokens in parallel. However, aligning dLLMs with human preferences or\ntask-specific rewards via reinforcement learning (RL) is challenging because\ntheir intractable log-likelihood precludes the direct application of standard\npolicy gradient methods. While prior work uses surrogates like the evidence\nlower bound (ELBO), these one-sided approximations can introduce significant\npolicy gradient bias. To address this, we propose the Sandwiched Policy\nGradient (SPG) that leverages both an upper and a lower bound of the true\nlog-likelihood. Experiments show that SPG significantly outperforms baselines\nbased on ELBO or one-step estimation. Specifically, SPG improves the accuracy\nover state-of-the-art RL methods for dLLMs by 3.6% in GSM8K, 2.6% in MATH500,\n18.4% in Countdown and 27.0% in Sudoku.",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "published": "2025-10-10T16:52:25+00:00"
+  },
+  {
+    "id": "http://arxiv.org/abs/2510.09539v1",
+    "title": "IF-D: A High-Frequency, General-Purpose Inertial Foundation Dataset for Self-Supervised Learning",
+    "authors": [
+      "Patrick Ferreira",
+      "Paula Costa"
+    ],
+    "summary": "We present IF-D, a large-scale inertial dataset designed to enable\nself-supervised and foundational learning for IMU time series. IF-D comprises\ncontinuous, long-duration multichannel recordings (accelerometer, gyroscope,\nmagnetometer) sampled at 200Hz using a UM7 IMU mounted inside a 3D-printed\nspherical enclosure that promotes diverse, free rotations during vehicle\ntraversal. The collection spans approximately 135 minutes of recording,\nyielding around 1.6 million samples across nine sensor channels. We describe\nthe data acquisition setup, preprocessing, and calibration procedures\n(six-orientation accelerometer calibration, stationary gyroscope bias\nestimation, and ellipsoid fitting for magnetometer hard-/soft-iron correction),\nand provide quantitative calibration results. IF-D is designed to mitigate\nplatform specific motion bias and expose models to both physical dynamics and\ntypical measurement noise, thereby facilitating robust representation learning\nand downstream tasks such as event detection, motion mode recognition, and\ninertial navigation.",
+    "categories": [
+      "eess.SP",
+      "68T05, 94A12",
+      "I.2.6; I.5.4; I.4.8"
+    ],
+    "published": "2025-10-10T16:50:57+00:00"
+  },
+  {
+    "id": "http://arxiv.org/abs/2510.09536v1",
+    "title": "Evaluating Robustness of Large Language Models Against Multilingual Typographical Errors",
+    "authors": [
+      "Yihong Liu",
+      "Raoyuan Zhao",
+      "Lena Altinger",
+      "Hinrich Schütze",
+      "Michael A. Hedderich"
+    ],
+    "summary": "Large language models (LLMs) are increasingly deployed in multilingual,\nreal-world applications with user inputs -- naturally introducing typographical\nerrors (typos). Yet most benchmarks assume clean input, leaving the robustness\nof LLMs to typos across languages largely underexplored. To address this gap,\nwe introduce MulTypo, a multilingual typo generation algorithm that simulates\nhuman-like errors based on language-specific keyboard layouts and typing\nbehavior. We evaluate 18 open-source LLMs across three model families and five\ndownstream tasks spanning language inference, multi-choice question answering,\nmathematical reasoning, and machine translation tasks. Our results show that\ntypos consistently degrade performance, particularly in generative tasks and\nthose requiring reasoning -- while the natural language inference task is\ncomparatively more robust. Instruction tuning improves clean-input performance\nbut may increase brittleness under noise. We also observe language-dependent\nrobustness: high-resource languages are generally more robust than low-resource\nones, and translation from English is more robust than translation into\nEnglish. Our findings underscore the need for noise-aware training and\nmultilingual robustness evaluation. We make our code and data publicly\navailable.",
+    "categories": [
+      "cs.CL"
+    ],
+    "published": "2025-10-10T16:49:12+00:00"
+  }
+]

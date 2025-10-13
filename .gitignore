@@ -1,0 +1,37 @@
+# Python 相關
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# 虛擬環境
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# dotenv 檔案
+.env
+.env.local
+.env.*
+
+# 資料目錄
+data/raw/
+data/processed/
+data/logs/
+
+# 系統與 IDE 檔案
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# 測試與暫存
+.coverage
+pytest_cache/
+*.log
+*.tmp

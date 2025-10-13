@@ -1,0 +1,175 @@
+[
+  {
+    "id": "http://arxiv.org/abs/2510.09485v1",
+    "title": "Locally Optimal Private Sampling: Beyond the Global Minimax",
+    "authors": [
+      "Hrad Ghoukasian",
+      "Bonwoo Lee",
+      "Shahab Asoodeh"
+    ],
+    "summary": "We study the problem of sampling from a distribution under local differential\nprivacy (LDP). Given a private distribution $P \\in \\mathcal{P}$, the goal is to\ngenerate a single sample from a distribution that remains close to $P$ in\n$f$-divergence while satisfying the constraints of LDP. This task captures the\nfundamental challenge of producing realistic-looking data under strong privacy\nguarantees. While prior work by Park et al. (NeurIPS'24) focuses on global\nminimax-optimality across a class of distributions, we take a local\nperspective. Specifically, we examine the minimax risk in a neighborhood around\na fixed distribution $P_0$, and characterize its exact value, which depends on\nboth $P_0$ and the privacy level. Our main result shows that the local minimax\nrisk is determined by the global minimax risk when the distribution class\n$\\mathcal{P}$ is restricted to a neighborhood around $P_0$. To establish this,\nwe (1) extend previous work from pure LDP to the more general functional LDP\nframework, and (2) prove that the globally optimal functional LDP sampler\nyields the optimal local sampler when constrained to distributions near $P_0$.\nBuilding on this, we also derive a simple closed-form expression for the\nlocally minimax-optimal samplers which does not depend on the choice of\n$f$-divergence. We further argue that this local framework naturally models\nprivate sampling with public data, where the public data distribution is\nrepresented by $P_0$. In this setting, we empirically compare our locally\noptimal sampler to existing global methods, and demonstrate that it\nconsistently outperforms global minimax samplers.",
+    "categories": [
+      "cs.LG",
+      "cs.CR",
+      "cs.CY",
+      "cs.IT",
+      "math.IT",
+      "E.4; G.3; K.4.1"
+    ],
+    "published": "2025-10-10T15:50:48+00:00"
+  },
+  {
+    "id": "http://arxiv.org/abs/2510.09484v1",
+    "title": "CRPS-LAM: Regional ensemble weather forecasting from matching marginals",
+    "authors": [
+      "Erik Larsson",
+      "Joel Oskarsson",
+      "Tomas Landelius",
+      "Fredrik Lindsten"
+    ],
+    "summary": "Machine learning for weather prediction increasingly relies on ensemble\nmethods to provide probabilistic forecasts. Diffusion-based models have shown\nstrong performance in Limited-Area Modeling (LAM) but remain computationally\nexpensive at sampling time. Building on the success of global weather\nforecasting models trained based on Continuous Ranked Probability Score (CRPS),\nwe introduce CRPS-LAM, a probabilistic LAM forecasting model trained with a\nCRPS-based objective. By sampling and injecting a single latent noise vector\ninto the model, CRPS-LAM generates ensemble members in a single forward pass,\nachieving sampling speeds up to 39 times faster than a diffusion-based model.\nWe evaluate the model on the MEPS regional dataset, where CRPS-LAM matches the\nlow errors of diffusion models. By retaining also fine-scale forecast details,\nthe method stands out as an effective approach for probabilistic regional\nweather forecasting",
+    "categories": [
+      "cs.LG"
+    ],
+    "published": "2025-10-10T15:48:31+00:00"
+  },
+  {
+    "id": "http://arxiv.org/abs/2510.09477v1",
+    "title": "Efficient Autoregressive Inference for Transformer Probabilistic Models",
+    "authors": [
+      "Conor Hassan",
+      "Nasrulloh Loka",
+      "Cen-You Li",
+      "Daolang Huang",
+      "Paul E. Chang",
+      "Yang Yang",
+      "Francesco Silvestrin",
+      "Samuel Kaski",
+      "Luigi Acerbi"
+    ],
+    "summary": "Transformer-based models for amortized probabilistic inference, such as\nneural processes, prior-fitted networks, and tabular foundation models, excel\nat single-pass marginal prediction. However, many real-world applications, from\nsignal interpolation to multi-column tabular predictions, require coherent\njoint distributions that capture dependencies between predictions. While purely\nautoregressive architectures efficiently generate such distributions, they\nsacrifice the flexible set-conditioning that makes these models powerful for\nmeta-learning. Conversely, the standard approach to obtain joint distributions\nfrom set-based models requires expensive re-encoding of the entire augmented\nconditioning set at each autoregressive step. We introduce a causal\nautoregressive buffer that preserves the advantages of both paradigms. Our\napproach decouples context encoding from updating the conditioning set. The\nmodel processes the context once and caches it. A dynamic buffer then captures\ntarget dependencies: as targets are incorporated, they enter the buffer and\nattend to both the cached context and previously buffered targets. This enables\nefficient batched autoregressive generation and one-pass joint log-likelihood\nevaluation. A unified training strategy allows seamless integration of\nset-based and autoregressive modes at minimal additional cost. Across synthetic\nfunctions, EEG signals, cognitive models, and tabular data, our method matches\npredictive accuracy of strong baselines while delivering up to 20 times faster\njoint sampling. Our approach combines the efficiency of autoregressive\ngenerative models with the representational power of set-based conditioning,\nmaking joint prediction practical for transformer-based probabilistic models.",
+    "categories": [
+      "stat.ML",
+      "cs.LG"
+    ],
+    "published": "2025-10-10T15:32:58+00:00"
+  },
+  {
+    "id": "http://arxiv.org/abs/2510.09475v1",
+    "title": "Few-shot multi-token DreamBooth with LoRa for style-consistent character generation",
+    "authors": [
+      "Ruben Pascual",
+      "Mikel Sesma-Sara",
+      "Aranzazu Jurio",
+      "Daniel Paternain",
+      "Mikel Galar"
+    ],
+    "summary": "The audiovisual industry is undergoing a profound transformation as it is\nintegrating AI developments not only to automate routine tasks but also to\ninspire new forms of art. This paper addresses the problem of producing a\nvirtually unlimited number of novel characters that preserve the artistic style\nand shared visual traits of a small set of human-designed reference characters,\nthus broadening creative possibilities in animation, gaming, and related\ndomains. Our solution builds upon DreamBooth, a well-established fine-tuning\ntechnique for text-to-image diffusion models, and adapts it to tackle two core\nchallenges: capturing intricate character details beyond textual prompts and\nthe few-shot nature of the training data. To achieve this, we propose a\nmulti-token strategy, using clustering to assign separate tokens to individual\ncharacters and their collective style, combined with LoRA-based\nparameter-efficient fine-tuning. By removing the class-specific regularization\nset and introducing random tokens and embeddings during generation, our\napproach allows for unlimited character creation while preserving the learned\nstyle. We evaluate our method on five small specialized datasets, comparing it\nto relevant baselines using both quantitative metrics and a human evaluation\nstudy. Our results demonstrate that our approach produces high-quality, diverse\ncharacters while preserving the distinctive aesthetic features of the reference\ncharacters, with human evaluation further reinforcing its effectiveness and\nhighlighting the potential of our method.",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "published": "2025-10-10T15:28:55+00:00"
+  },
+  {
+    "id": "http://arxiv.org/abs/2510.09474v1",
+    "title": "Multimodal Policy Internalization for Conversational Agents",
+    "authors": [
+      "Zhenhailong Wang",
+      "Jiateng Liu",
+      "Amin Fazel",
+      "Ritesh Sarkhel",
+      "Xing Fan",
+      "Xiang Li",
+      "Chenlei Guo",
+      "Heng Ji",
+      "Ruhi Sarikaya"
+    ],
+    "summary": "Modern conversational agents like ChatGPT and Alexa+ rely on predefined\npolicies specifying metadata, response styles, and tool-usage rules. As these\nLLM-based systems expand to support diverse business and user queries, such\npolicies, often implemented as in-context prompts, are becoming increasingly\ncomplex and lengthy, making faithful adherence difficult and imposing large\nfixed computational costs. With the rise of multimodal agents, policies that\ngovern visual and multimodal behaviors are critical but remain understudied.\nPrior prompt-compression work mainly shortens task templates and\ndemonstrations, while existing policy-alignment studies focus only on\ntext-based safety rules. We introduce Multimodal Policy Internalization (MPI),\na new task that internalizes reasoning-intensive multimodal policies into model\nparameters, enabling stronger policy-following without including the policy\nduring inference. MPI poses unique data and algorithmic challenges. We build\ntwo datasets spanning synthetic and real-world decision-making and tool-using\ntasks and propose TriMPI, a three-stage training framework. TriMPI first\ninjects policy knowledge via continual pretraining, then performs supervised\nfinetuning, and finally applies PolicyRollout, a GRPO-style reinforcement\nlearning extension that augments rollouts with policy-aware responses for\ngrounded exploration. TriMPI achieves notable gains in end-to-end accuracy,\ngeneralization, and robustness to forgetting. As the first work on multimodal\npolicy internalization, we provide datasets, training recipes, and\ncomprehensive evaluations to foster future research. Project page:\nhttps://mikewangwzhl.github.io/TriMPI.",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "published": "2025-10-10T15:28:30+00:00"
+  },
+  {
+    "id": "http://arxiv.org/abs/2510.09473v1",
+    "title": "D-TPT: Dimensional Entropy Maximization for Calibrating Test-Time Prompt Tuning in Vision-Language Models",
+    "authors": [
+      "Jisu Han",
+      "Wonjun Hwang"
+    ],
+    "summary": "Test-time adaptation paradigm provides flexibility towards domain shifts by\nperforming immediate adaptation on unlabeled target data from the source model.\nVision-Language Models (VLMs) leverage their generalization capabilities for\ndiverse downstream tasks, and test-time prompt tuning has emerged as a\nprominent solution for adapting VLMs. In this work, we explore contrastive VLMs\nand identify the modality gap caused by a single dominant feature dimension\nacross modalities. We observe that the dominant dimensions in both text and\nimage modalities exhibit high predictive sensitivity, and that constraining\ntheir influence can improve calibration error. Building on this insight, we\npropose dimensional entropy maximization that regularizes the distribution of\ntextual features toward uniformity to mitigate the dependency of dominant\ndimensions. Our method alleviates the degradation of calibration performance in\ntest-time prompt tuning, offering a simple yet effective solution to enhance\nthe reliability of VLMs in real-world deployment scenarios.",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "published": "2025-10-10T15:27:44+00:00"
+  },
+  {
+    "id": "http://arxiv.org/abs/2510.09472v1",
+    "title": "Hybrid Models for Natural Language Reasoning: The Case of Syllogistic Logic",
+    "authors": [
+      "Manuel Vargas Guzmán",
+      "Jakub Szymanik",
+      "Maciej Malicki"
+    ],
+    "summary": "Despite the remarkable progress in neural models, their ability to\ngeneralize, a cornerstone for applications like logical reasoning, remains a\ncritical challenge. We delineate two fundamental aspects of this ability:\ncompositionality, the capacity to abstract atomic logical rules underlying\ncomplex inferences, and recursiveness, the aptitude to build intricate\nrepresentations through iterative application of inference rules. In the\nliterature, these two aspects are often confounded together under the umbrella\nterm of generalization. To sharpen this distinction, we investigated the\nlogical generalization capabilities of pre-trained large language models (LLMs)\nusing the syllogistic fragment as a benchmark for natural language reasoning.\nThough simple, this fragment provides a foundational yet expressive subset of\nformal logic that supports controlled evaluation of essential reasoning\nabilities. Our findings reveal a significant disparity: while LLMs demonstrate\nreasonable proficiency in recursiveness, they struggle with compositionality.\nTo overcome these limitations and establish a reliable logical prover, we\npropose a hybrid architecture integrating symbolic reasoning with neural\ncomputation. This synergistic interaction enables robust and efficient\ninference, neural components accelerate processing, while symbolic reasoning\nensures completeness. Our experiments show that high efficiency is preserved\neven with relatively small neural components. As part of our proposed\nmethodology, this analysis gives a rationale and highlights the potential of\nhybrid models to effectively address key generalization barriers in neural\nreasoning systems.",
+    "categories": [
+      "cs.CL",
+      "cs.LG",
+      "cs.LO"
+    ],
+    "published": "2025-10-10T15:27:29+00:00"
+  },
+  {
+    "id": "http://arxiv.org/abs/2510.09469v1",
+    "title": "Scalable Multi-Agent Path Finding using Collision-Aware Dynamic Alert Mask and a Hybrid Execution Strategy",
+    "authors": [
+      "Bharath Muppasani",
+      "Ritirupa Dey",
+      "Biplav Srivastava",
+      "Vignesh Narayanan"
+    ],
+    "summary": "Multi-agent pathfinding (MAPF) remains a critical problem in robotics and\nautonomous systems, where agents must navigate shared spaces efficiently while\navoiding conflicts. Traditional centralized algorithms that have global\ninformation, such as Conflict-Based Search (CBS), provide high-quality\nsolutions but become computationally expensive in large-scale scenarios due to\nthe combinatorial explosion of conflicts that need resolution. Conversely,\ndistributed approaches that have local information, particularly learning-based\nmethods, offer better scalability by operating with relaxed information\navailability, yet often at the cost of solution quality. To address these\nlimitations, we propose a hybrid framework that combines decentralized path\nplanning with a lightweight centralized coordinator. Our framework leverages\nreinforcement learning (RL) for decentralized planning, enabling agents to\nadapt their planning based on minimal, targeted alerts--such as static\nconflict-cell flags or brief conflict tracks--that are dynamically shared\ninformation from the central coordinator for effective conflict resolution. We\nempirically study the effect of the information available to an agent on its\nplanning performance. Our approach reduces the inter-agent information sharing\ncompared to fully centralized and distributed methods, while still consistently\nfinding feasible, collision-free solutions--even in large-scale scenarios\nhaving higher agent counts.",
+    "categories": [
+      "cs.MA",
+      "cs.AI",
+      "cs.RO"
+    ],
+    "published": "2025-10-10T15:25:40+00:00"
+  },
+  {
+    "id": "http://arxiv.org/abs/2510.09468v1",
+    "title": "Geodesic Calculus on Latent Spaces",
+    "authors": [
+      "Florine Hartwig",
+      "Josua Sassen",
+      "Juliane Braunsmann",
+      "Martin Rumpf",
+      "Benedikt Wirth"
+    ],
+    "summary": "Latent manifolds of autoencoders provide low-dimensional representations of\ndata, which can be studied from a geometric perspective. We propose to describe\nthese latent manifolds as implicit submanifolds of some ambient latent space.\nBased on this, we develop tools for a discrete Riemannian calculus\napproximating classical geometric operators. These tools are robust against\ninaccuracies of the implicit representation often occurring in practical\nexamples. To obtain a suitable implicit representation, we propose to learn an\napproximate projection onto the latent manifold by minimizing a denoising\nobjective. This approach is independent of the underlying autoencoder and\nsupports the use of different Riemannian geometries on the latent manifolds.\nThe framework in particular enables the computation of geodesic paths\nconnecting given end points and shooting geodesics via the Riemannian\nexponential maps on latent manifolds. We evaluate our approach on various\nautoencoders trained on synthetic and real data.",
+    "categories": [
+      "cs.LG",
+      "68T07, 53Z50 (Primary) 53B12 (Secondary)",
+      "I.2.6"
+    ],
+    "published": "2025-10-10T15:25:03+00:00"
+  },
+  {
+    "id": "http://arxiv.org/abs/2510.09465v1",
+    "title": "Interpretable Machine Learning for Predicting Startup Funding, Patenting, and Exits",
+    "authors": [
+      "Saeid Mashhadi",
+      "Amirhossein Saghezchi",
+      "Vesal Ghassemzadeh Kashani"
+    ],
+    "summary": "This study develops an interpretable machine learning framework to forecast\nstartup outcomes, including funding, patenting, and exit. A firm-quarter panel\nfor 2010-2023 is constructed from Crunchbase and matched to U.S. Patent and\nTrademark Office (USPTO) data. Three horizons are evaluated: next funding\nwithin 12 months, patent-stock growth within 24 months, and exit through an\ninitial public offering (IPO) or acquisition within 36 months. Preprocessing is\nfit on a development window (2010-2019) and applied without change to later\ncohorts to avoid leakage. Class imbalance is addressed using inverse-prevalence\nweights and the Synthetic Minority Oversampling Technique for Nominal and\nContinuous features (SMOTE-NC). Logistic regression and tree ensembles,\nincluding Random Forest, XGBoost, LightGBM, and CatBoost, are compared using\nthe area under the precision-recall curve (PR-AUC) and the area under the\nreceiver operating characteristic curve (AUROC). Patent, funding, and exit\npredictions achieve AUROC values of 0.921, 0.817, and 0.872, providing\ntransparent and reproducible rankings for innovation finance.",
+    "categories": [
+      "cs.LG",
+      "q-fin.GN"
+    ],
+    "published": "2025-10-10T15:20:29+00:00"
+  }
+]

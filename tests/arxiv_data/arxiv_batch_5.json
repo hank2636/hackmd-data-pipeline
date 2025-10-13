@@ -1,0 +1,180 @@
+[
+  {
+    "id": "http://arxiv.org/abs/2510.09462v1",
+    "title": "Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols",
+    "authors": [
+      "Mikhail Terekhov",
+      "Alexander Panfilov",
+      "Daniil Dzenhaliou",
+      "Caglar Gulcehre",
+      "Maksym Andriushchenko",
+      "Ameya Prabhu",
+      "Jonas Geiping"
+    ],
+    "summary": "AI control protocols serve as a defense mechanism to stop untrusted LLM\nagents from causing harm in autonomous settings. Prior work treats this as a\nsecurity problem, stress testing with exploits that use the deployment context\nto subtly complete harmful side tasks, such as backdoor insertion. In practice,\nmost AI control protocols are fundamentally based on LLM monitors, which can\nbecome a central point of failure. We study adaptive attacks by an untrusted\nmodel that knows the protocol and the monitor model, which is plausible if the\nuntrusted model was trained with a later knowledge cutoff or can search for\nthis information autonomously. We instantiate a simple adaptive attack vector\nby which the attacker embeds publicly known or zero-shot prompt injections in\nthe model outputs. Using this tactic, frontier models consistently evade\ndiverse monitors and complete malicious tasks on two main AI control\nbenchmarks. The attack works universally against current protocols that rely on\na monitor. Furthermore, the recent Defer-to-Resample protocol even backfires,\nas its resampling amplifies the prompt injection and effectively reframes it as\na best-of-$n$ attack. In general, adaptive attacks on monitor models represent\na major blind spot in current control protocols and should become a standard\ncomponent of evaluations for future AI control mechanisms.",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CR"
+    ],
+    "published": "2025-10-10T15:12:44+00:00"
+  },
+  {
+    "id": "http://arxiv.org/abs/2510.09459v1",
+    "title": "Failure Prediction at Runtime for Generative Robot Policies",
+    "authors": [
+      "Ralf Römer",
+      "Adrian Kobras",
+      "Luca Worbis",
+      "Angela P. Schoellig"
+    ],
+    "summary": "Imitation learning (IL) with generative models, such as diffusion and flow\nmatching, has enabled robots to perform complex, long-horizon tasks. However,\ndistribution shifts from unseen environments or compounding action errors can\nstill cause unpredictable and unsafe behavior, leading to task failure. Early\nfailure prediction during runtime is therefore essential for deploying robots\nin human-centered and safety-critical environments. We propose FIPER, a general\nframework for Failure Prediction at Runtime for generative IL policies that\ndoes not require failure data. FIPER identifies two key indicators of impending\nfailure: (i) out-of-distribution (OOD) observations detected via random network\ndistillation in the policy's embedding space, and (ii) high uncertainty in\ngenerated actions measured by a novel action-chunk entropy score. Both failure\nprediction scores are calibrated using a small set of successful rollouts via\nconformal prediction. A failure alarm is triggered when both indicators,\naggregated over short time windows, exceed their thresholds. We evaluate FIPER\nacross five simulation and real-world environments involving diverse failure\nmodes. Our results demonstrate that FIPER better distinguishes actual failures\nfrom benign OOD situations and predicts failures more accurately and earlier\nthan existing methods. We thus consider this work an important step towards\nmore interpretable and safer generative robot policies. Code, data and videos\nare available at https://tum-lsy.github.io/fiper_website.",
+    "categories": [
+      "cs.RO",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "published": "2025-10-10T15:09:27+00:00"
+  },
+  {
+    "id": "http://arxiv.org/abs/2510.09458v1",
+    "title": "SilvaScenes: Tree Segmentation and Species Classification from Under-Canopy Images in Natural Forests",
+    "authors": [
+      "David-Alexandre Duclos",
+      "William Guimont-Martin",
+      "Gabriel Jeanson",
+      "Arthur Larochelle-Tremblay",
+      "Théo Defosse",
+      "Frédéric Moore",
+      "Philippe Nolet",
+      "François Pomerleau",
+      "Philippe Giguère"
+    ],
+    "summary": "Interest in robotics for forest management is growing, but perception in\ncomplex, natural environments remains a significant hurdle. Conditions such as\nheavy occlusion, variable lighting, and dense vegetation pose challenges to\nautomated systems, which are essential for precision forestry, biodiversity\nmonitoring, and the automation of forestry equipment. These tasks rely on\nadvanced perceptual capabilities, such as detection and fine-grained species\nclassification of individual trees. Yet, existing datasets are inadequate to\ndevelop such perception systems, as they often focus on urban settings or a\nlimited number of species. To address this, we present SilvaScenes, a new\ndataset for instance segmentation of tree species from under-canopy images.\nCollected across five bioclimatic domains in Quebec, Canada, SilvaScenes\nfeatures 1476 trees from 24 species with annotations from forestry experts. We\ndemonstrate the relevance and challenging nature of our dataset by benchmarking\nmodern deep learning approaches for instance segmentation. Our results show\nthat, while tree segmentation is easy, with a top mean average precision (mAP)\nof 67.65%, species classification remains a significant challenge with an mAP\nof only 35.69%. Our dataset and source code will be available at\nhttps://github.com/norlab-ulaval/SilvaScenes.",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.LG",
+      "cs.RO"
+    ],
+    "published": "2025-10-10T15:08:35+00:00"
+  },
+  {
+    "id": "http://arxiv.org/abs/2510.09452v1",
+    "title": "On Uniformly Scaling Flows: A Density-Aligned Approach to Deep One-Class Classification",
+    "authors": [
+      "Faried Abu Zaid",
+      "Tim Katzke",
+      "Emmanuel Müller",
+      "Daniel Neider"
+    ],
+    "summary": "Unsupervised anomaly detection is often framed around two widely studied\nparadigms. Deep one-class classification, exemplified by Deep SVDD, learns\ncompact latent representations of normality, while density estimators realized\nby normalizing flows directly model the likelihood of nominal data. In this\nwork, we show that uniformly scaling flows (USFs), normalizing flows with a\nconstant Jacobian determinant, precisely connect these approaches.\nSpecifically, we prove how training a USF via maximum-likelihood reduces to a\nDeep SVDD objective with a unique regularization that inherently prevents\nrepresentational collapse. This theoretical bridge implies that USFs inherit\nboth the density faithfulness of flows and the distance-based reasoning of\none-class methods. We further demonstrate that USFs induce a tighter alignment\nbetween negative log-likelihood and latent norm than either Deep SVDD or\nnon-USFs, and how recent hybrid approaches combining one-class objectives with\nVAEs can be naturally extended to USFs. Consequently, we advocate using USFs as\na drop-in replacement for non-USFs in modern anomaly detection architectures.\nEmpirically, this substitution yields consistent performance gains and\nsubstantially improved training stability across multiple benchmarks and model\nbackbones for both image-level and pixel-level detection. These results unify\ntwo major anomaly detection paradigms, advancing both theoretical understanding\nand practical performance.",
+    "categories": [
+      "cs.LG"
+    ],
+    "published": "2025-10-10T15:01:26+00:00"
+  },
+  {
+    "id": "http://arxiv.org/abs/2510.09450v1",
+    "title": "Dynamic Weight-based Temporal Aggregation for Low-light Video Enhancement",
+    "authors": [
+      "Ruirui Lin",
+      "Guoxi Huang",
+      "Nantheera Anantrasirichai"
+    ],
+    "summary": "Low-light video enhancement (LLVE) is challenging due to noise, low contrast,\nand color degradations. Learning-based approaches offer fast inference but\nstill struggle with heavy noise in real low-light scenes, primarily due to\nlimitations in effectively leveraging temporal information. In this paper, we\naddress this issue with DWTA-Net, a novel two-stage framework that jointly\nexploits short- and long-term temporal cues. Stage I employs Visual State-Space\nblocks for multi-frame alignment, recovering brightness, color, and structure\nwith local consistency. Stage II introduces a recurrent refinement module with\ndynamic weight-based temporal aggregation guided by optical flow, adaptively\nbalancing static and dynamic regions. A texture-adaptive loss further preserves\nfine details while promoting smoothness in flat areas. Experiments on\nreal-world low-light videos show that DWTA-Net effectively suppresses noise and\nartifacts, delivering superior visual quality compared with state-of-the-art\nmethods.",
+    "categories": [
+      "cs.CV"
+    ],
+    "published": "2025-10-10T15:00:31+00:00"
+  },
+  {
+    "id": "http://arxiv.org/abs/2510.09446v1",
+    "title": "Deep Learning of the Biswas-Chatterjee-Sen Model",
+    "authors": [
+      "J. F. Silva Neto",
+      "D. S. M. Alencar",
+      "L. T. Brito",
+      "G. A. Alves",
+      "F. W. S. Lima",
+      "A. Macedo-Filho",
+      "R. S. Ferreira",
+      "T. F. A. Alves"
+    ],
+    "summary": "We investigate the critical properties of kinetic continuous opinion dynamics\nusing deep learning techniques. The system consists of $N$ continuous spin\nvariables in the interval $[-1,1]$. Dense neural networks are trained on spin\nconfiguration data generated via kinetic Monte Carlo simulations, accurately\nidentifying the critical point on both square and triangular lattices.\nClassical unsupervised learning with principal component analysis reproduces\nthe magnetization and allows estimation of critical exponents. Additionally,\nvariational autoencoders are implemented to study the phase transition through\nthe loss function, which behaves as an order parameter. A correlation function\nbetween real and reconstructed data is defined and found to be universal at the\ncritical point.",
+    "categories": [
+      "cond-mat.stat-mech",
+      "physics.data-an"
+    ],
+    "published": "2025-10-10T14:58:26+00:00"
+  },
+  {
+    "id": "http://arxiv.org/abs/2510.09435v1",
+    "title": "Cross-attention Secretly Performs Orthogonal Alignment in Recommendation Models",
+    "authors": [
+      "Hyunin Lee",
+      "Yong Zhang",
+      "Hoang Vu Nguyen",
+      "Xiaoyi Liu",
+      "Namyong Park",
+      "Christopher Jung",
+      "Rong Jin",
+      "Yang Wang",
+      "Zhigang Wang",
+      "Somayeh Sojoudi",
+      "Xue Feng"
+    ],
+    "summary": "Cross-domain sequential recommendation (CDSR) aims to align heterogeneous\nuser behavior sequences collected from different domains. While cross-attention\nis widely used to enhance alignment and improve recommendation performance, its\nunderlying mechanism is not fully understood. Most researchers interpret\ncross-attention as residual alignment, where the output is generated by\nremoving redundant and preserving non-redundant information from the query\ninput by referencing another domain data which is input key and value. Beyond\nthe prevailing view, we introduce Orthogonal Alignment, a phenomenon in which\ncross-attention discovers novel information that is not present in the query\ninput, and further argue that those two contrasting alignment mechanisms can\nco-exist in recommendation models We find that when the query input and output\nof cross-attention are orthogonal, model performance improves over 300\nexperiments. Notably, Orthogonal Alignment emerges naturally, without any\nexplicit orthogonality constraints. Our key insight is that Orthogonal\nAlignment emerges naturally because it improves scaling law. We show that\nbaselines additionally incorporating cross-attention module outperform\nparameter-matched baselines, achieving a superior accuracy-per-model parameter.\nWe hope these findings offer new directions for parameter-efficient scaling in\nmulti-modal research.",
+    "categories": [
+      "cs.LG",
+      "cs.IR"
+    ],
+    "published": "2025-10-10T14:45:39+00:00"
+  },
+  {
+    "id": "http://arxiv.org/abs/2510.09427v1",
+    "title": "Skyrmionic polarization textures in structured dielectric planar media",
+    "authors": [
+      "Francesco Di Colandrea",
+      "Lorenzo Marrucci",
+      "Filippo Cardano"
+    ],
+    "summary": "Skyrmionic patterns of optical fields have recently emerged across diverse\nphotonic platforms. Here, we show that such textures also arise in the\npolarization eigenstates of light propagation through flat dielectric devices\nwith an engineered, space-dependent optic-axis orientation. We focus on\ntwo-dimensional periodic structures, where propagation through multiple devices\nmaps onto quantum dynamics on a synthetic optical lattice. Adopting the\ncondensed-matter framework, a spatial period defines an effective Brillouin\nzone, and polarization eigenstates can be grouped in two bands, with the role\nof energy played by the opposite phase delay. When such eigenstates exhibit\nskyrmionic textures, the corresponding lattice model shows the topology of a\nChern insulator. These structures result from the interaction between the\noptical field and the medium and do not reflect a topological structure of the\nmedium itself. We validate these concepts in a system of three tunable\nliquid-crystal metasurfaces. Using quantum process tomography based on\nsupervised machine learning, we reconstruct the polarization eigenmodes over\none spatial period. We identify configurations of the devices' parameters that\nlead to topologically non-trivial bands, where we directly observe skyrmionic\neigenpolarization textures. Along the analogy with condensed matter, we also\nextract local observables of lattice models, such as the Berry curvature and\nthe quantum metric. We finally report a numerical simulation of an all-optical\nquantum Hall effect emerging when light propagates through a sequence of such\ndevices, arranged so as to mimic the effect of an external force on the\nlattice.",
+    "categories": [
+      "physics.optics"
+    ],
+    "published": "2025-10-10T14:33:49+00:00"
+  },
+  {
+    "id": "http://arxiv.org/abs/2510.09425v1",
+    "title": "Bandits with Single-Peaked Preferences and Limited Resources",
+    "authors": [
+      "Gur Keinan",
+      "Rotem Torkan",
+      "Omer Ben-Porat"
+    ],
+    "summary": "We study an online stochastic matching problem in which an algorithm\nsequentially matches $U$ users to $K$ arms, aiming to maximize cumulative\nreward over $T$ rounds under budget constraints. Without structural\nassumptions, computing the optimal matching is NP-hard, making online learning\ncomputationally infeasible. To overcome this barrier, we focus on\n\\emph{single-peaked preferences} -- a well-established structure in social\nchoice theory, where users' preferences are unimodal with respect to a common\norder over arms. We devise an efficient algorithm for the offline budgeted\nmatching problem, and leverage it into an efficient online algorithm with a\nregret of $\\tilde O(UKT^{2/3})$. Our approach relies on a novel PQ tree-based\norder approximation method. If the single-peaked structure is known, we develop\nan efficient UCB-like algorithm that achieves a regret bound of $\\tilde\nO(U\\sqrt{TK})$.",
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "published": "2025-10-10T14:27:25+00:00"
+  },
+  {
+    "id": "http://arxiv.org/abs/2510.09424v1",
+    "title": "The Speech-LLM Takes It All: A Truly Fully End-to-End Spoken Dialogue State Tracking Approach",
+    "authors": [
+      "Nizar El Ghazal",
+      "Antoine Caubrière",
+      "Valentin Vielzeuf"
+    ],
+    "summary": "This paper presents a comparative study of context management strategies for\nend-to-end Spoken Dialog State Tracking using Speech-LLMs. We systematically\nevaluate traditional multimodal context (combining text history and spoken\ncurrent turn), full spoken history, and compressed spoken history approaches.\nOur experiments on the SpokenWOZ corpus demonstrate that providing the full\nspoken conversation as input yields the highest performance among models of\nsimilar size, significantly surpassing prior methods. Furthermore, we show that\nattention-pooling-based compression of the spoken history offers a strong\ntrade-off, maintaining competitive accuracy with reduced context size. Detailed\nanalysis confirms that improvements stem from more effective context\nutilization.",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.LG",
+      "eess.AS"
+    ],
+    "published": "2025-10-10T14:27:01+00:00"
+  }
+]
