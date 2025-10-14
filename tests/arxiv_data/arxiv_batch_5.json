@@ -1,180 +1,235 @@
 [
   {
-    "id": "http://arxiv.org/abs/2510.09462v1",
-    "title": "Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols",
+    "entry_id": "http://arxiv.org/abs/2510.11400v1",
+    "title": "FedHybrid: Breaking the Memory Wall of Federated Learning via Hybrid Tensor Management",
     "authors": [
-      "Mikhail Terekhov",
-      "Alexander Panfilov",
-      "Daniil Dzenhaliou",
-      "Caglar Gulcehre",
-      "Maksym Andriushchenko",
-      "Ameya Prabhu",
-      "Jonas Geiping"
+      "Kahou Tam",
+      "Chunlin Tian",
+      "Li Li",
+      "Haikai Zhao",
+      "ChengZhong Xu"
     ],
-    "summary": "AI control protocols serve as a defense mechanism to stop untrusted LLM\nagents from causing harm in autonomous settings. Prior work treats this as a\nsecurity problem, stress testing with exploits that use the deployment context\nto subtly complete harmful side tasks, such as backdoor insertion. In practice,\nmost AI control protocols are fundamentally based on LLM monitors, which can\nbecome a central point of failure. We study adaptive attacks by an untrusted\nmodel that knows the protocol and the monitor model, which is plausible if the\nuntrusted model was trained with a later knowledge cutoff or can search for\nthis information autonomously. We instantiate a simple adaptive attack vector\nby which the attacker embeds publicly known or zero-shot prompt injections in\nthe model outputs. Using this tactic, frontier models consistently evade\ndiverse monitors and complete malicious tasks on two main AI control\nbenchmarks. The attack works universally against current protocols that rely on\na monitor. Furthermore, the recent Defer-to-Resample protocol even backfires,\nas its resampling amplifies the prompt injection and effectively reframes it as\na best-of-$n$ attack. In general, adaptive attacks on monitor models represent\na major blind spot in current control protocols and should become a standard\ncomponent of evaluations for future AI control mechanisms.",
-    "categories": [
-      "cs.LG",
-      "cs.AI",
-      "cs.CR"
-    ],
-    "published": "2025-10-10T15:12:44+00:00"
-  },
-  {
-    "id": "http://arxiv.org/abs/2510.09459v1",
-    "title": "Failure Prediction at Runtime for Generative Robot Policies",
-    "authors": [
-      "Ralf Römer",
-      "Adrian Kobras",
-      "Luca Worbis",
-      "Angela P. Schoellig"
-    ],
-    "summary": "Imitation learning (IL) with generative models, such as diffusion and flow\nmatching, has enabled robots to perform complex, long-horizon tasks. However,\ndistribution shifts from unseen environments or compounding action errors can\nstill cause unpredictable and unsafe behavior, leading to task failure. Early\nfailure prediction during runtime is therefore essential for deploying robots\nin human-centered and safety-critical environments. We propose FIPER, a general\nframework for Failure Prediction at Runtime for generative IL policies that\ndoes not require failure data. FIPER identifies two key indicators of impending\nfailure: (i) out-of-distribution (OOD) observations detected via random network\ndistillation in the policy's embedding space, and (ii) high uncertainty in\ngenerated actions measured by a novel action-chunk entropy score. Both failure\nprediction scores are calibrated using a small set of successful rollouts via\nconformal prediction. A failure alarm is triggered when both indicators,\naggregated over short time windows, exceed their thresholds. We evaluate FIPER\nacross five simulation and real-world environments involving diverse failure\nmodes. Our results demonstrate that FIPER better distinguishes actual failures\nfrom benign OOD situations and predicts failures more accurately and earlier\nthan existing methods. We thus consider this work an important step towards\nmore interpretable and safer generative robot policies. Code, data and videos\nare available at https://tum-lsy.github.io/fiper_website.",
-    "categories": [
-      "cs.RO",
-      "cs.AI",
-      "cs.LG"
-    ],
-    "published": "2025-10-10T15:09:27+00:00"
-  },
-  {
-    "id": "http://arxiv.org/abs/2510.09458v1",
-    "title": "SilvaScenes: Tree Segmentation and Species Classification from Under-Canopy Images in Natural Forests",
-    "authors": [
-      "David-Alexandre Duclos",
-      "William Guimont-Martin",
-      "Gabriel Jeanson",
-      "Arthur Larochelle-Tremblay",
-      "Théo Defosse",
-      "Frédéric Moore",
-      "Philippe Nolet",
-      "François Pomerleau",
-      "Philippe Giguère"
-    ],
-    "summary": "Interest in robotics for forest management is growing, but perception in\ncomplex, natural environments remains a significant hurdle. Conditions such as\nheavy occlusion, variable lighting, and dense vegetation pose challenges to\nautomated systems, which are essential for precision forestry, biodiversity\nmonitoring, and the automation of forestry equipment. These tasks rely on\nadvanced perceptual capabilities, such as detection and fine-grained species\nclassification of individual trees. Yet, existing datasets are inadequate to\ndevelop such perception systems, as they often focus on urban settings or a\nlimited number of species. To address this, we present SilvaScenes, a new\ndataset for instance segmentation of tree species from under-canopy images.\nCollected across five bioclimatic domains in Quebec, Canada, SilvaScenes\nfeatures 1476 trees from 24 species with annotations from forestry experts. We\ndemonstrate the relevance and challenging nature of our dataset by benchmarking\nmodern deep learning approaches for instance segmentation. Our results show\nthat, while tree segmentation is easy, with a top mean average precision (mAP)\nof 67.65%, species classification remains a significant challenge with an mAP\nof only 35.69%. Our dataset and source code will be available at\nhttps://github.com/norlab-ulaval/SilvaScenes.",
-    "categories": [
-      "cs.CV",
-      "cs.AI",
-      "cs.LG",
-      "cs.RO"
-    ],
-    "published": "2025-10-10T15:08:35+00:00"
-  },
-  {
-    "id": "http://arxiv.org/abs/2510.09452v1",
-    "title": "On Uniformly Scaling Flows: A Density-Aligned Approach to Deep One-Class Classification",
-    "authors": [
-      "Faried Abu Zaid",
-      "Tim Katzke",
-      "Emmanuel Müller",
-      "Daniel Neider"
-    ],
-    "summary": "Unsupervised anomaly detection is often framed around two widely studied\nparadigms. Deep one-class classification, exemplified by Deep SVDD, learns\ncompact latent representations of normality, while density estimators realized\nby normalizing flows directly model the likelihood of nominal data. In this\nwork, we show that uniformly scaling flows (USFs), normalizing flows with a\nconstant Jacobian determinant, precisely connect these approaches.\nSpecifically, we prove how training a USF via maximum-likelihood reduces to a\nDeep SVDD objective with a unique regularization that inherently prevents\nrepresentational collapse. This theoretical bridge implies that USFs inherit\nboth the density faithfulness of flows and the distance-based reasoning of\none-class methods. We further demonstrate that USFs induce a tighter alignment\nbetween negative log-likelihood and latent norm than either Deep SVDD or\nnon-USFs, and how recent hybrid approaches combining one-class objectives with\nVAEs can be naturally extended to USFs. Consequently, we advocate using USFs as\na drop-in replacement for non-USFs in modern anomaly detection architectures.\nEmpirically, this substitution yields consistent performance gains and\nsubstantially improved training stability across multiple benchmarks and model\nbackbones for both image-level and pixel-level detection. These results unify\ntwo major anomaly detection paradigms, advancing both theoretical understanding\nand practical performance.",
+    "summary": "Federated Learning (FL) emerges as a new learning paradigm that enables\nmultiple devices to collaboratively train a shared model while preserving data\nprivacy. However, one fundamental and prevailing challenge that hinders the\ndeployment of FL on mobile devices is the memory limitation. This paper\nproposes \\textit{FedHybrid}, a novel framework that effectively reduces the\nmemory footprint during the training process while guaranteeing the model\naccuracy and the overall training progress. Specifically, \\textit{FedHybrid}\nfirst selects the participating devices for each training round by jointly\nevaluating their memory budget, computing capability, and data diversity. After\nthat, it judiciously analyzes the computational graph and generates an\nexecution plan for each selected client in order to meet the corresponding\nmemory budget while minimizing the training delay through employing a hybrid of\nrecomputation and compression techniques according to the characteristic of\neach tensor. During the local training process, \\textit{FedHybrid} carries out\nthe execution plan with a well-designed activation compression technique to\neffectively achieve memory reduction with minimum accuracy loss. We conduct\nextensive experiments to evaluate \\textit{FedHybrid} on both simulation and\noff-the-shelf mobile devices. The experiment results demonstrate that\n\\textit{FedHybrid} achieves up to a 39.1\\% increase in model accuracy and a\n15.5$\\times$ reduction in wall clock time under various memory budgets compared\nwith the baselines.",
+    "primary_category": "cs.LG",
     "categories": [
       "cs.LG"
     ],
-    "published": "2025-10-10T15:01:26+00:00"
+    "published": "2025-10-13T13:43:55+00:00",
+    "updated": "2025-10-13T13:43:55+00:00",
+    "journal_ref": null,
+    "doi": "10.1145/3666025.3699346"
   },
   {
-    "id": "http://arxiv.org/abs/2510.09450v1",
-    "title": "Dynamic Weight-based Temporal Aggregation for Low-light Video Enhancement",
+    "entry_id": "http://arxiv.org/abs/2510.11390v1",
+    "title": "Medical Interpretability and Knowledge Maps of Large Language Models",
     "authors": [
-      "Ruirui Lin",
-      "Guoxi Huang",
-      "Nantheera Anantrasirichai"
+      "Razvan Marinescu",
+      "Victoria-Elisabeth Gruber",
+      "Diego Fajardo"
     ],
-    "summary": "Low-light video enhancement (LLVE) is challenging due to noise, low contrast,\nand color degradations. Learning-based approaches offer fast inference but\nstill struggle with heavy noise in real low-light scenes, primarily due to\nlimitations in effectively leveraging temporal information. In this paper, we\naddress this issue with DWTA-Net, a novel two-stage framework that jointly\nexploits short- and long-term temporal cues. Stage I employs Visual State-Space\nblocks for multi-frame alignment, recovering brightness, color, and structure\nwith local consistency. Stage II introduces a recurrent refinement module with\ndynamic weight-based temporal aggregation guided by optical flow, adaptively\nbalancing static and dynamic regions. A texture-adaptive loss further preserves\nfine details while promoting smoothness in flat areas. Experiments on\nreal-world low-light videos show that DWTA-Net effectively suppresses noise and\nartifacts, delivering superior visual quality compared with state-of-the-art\nmethods.",
-    "categories": [
-      "cs.CV"
-    ],
-    "published": "2025-10-10T15:00:31+00:00"
-  },
-  {
-    "id": "http://arxiv.org/abs/2510.09446v1",
-    "title": "Deep Learning of the Biswas-Chatterjee-Sen Model",
-    "authors": [
-      "J. F. Silva Neto",
-      "D. S. M. Alencar",
-      "L. T. Brito",
-      "G. A. Alves",
-      "F. W. S. Lima",
-      "A. Macedo-Filho",
-      "R. S. Ferreira",
-      "T. F. A. Alves"
-    ],
-    "summary": "We investigate the critical properties of kinetic continuous opinion dynamics\nusing deep learning techniques. The system consists of $N$ continuous spin\nvariables in the interval $[-1,1]$. Dense neural networks are trained on spin\nconfiguration data generated via kinetic Monte Carlo simulations, accurately\nidentifying the critical point on both square and triangular lattices.\nClassical unsupervised learning with principal component analysis reproduces\nthe magnetization and allows estimation of critical exponents. Additionally,\nvariational autoencoders are implemented to study the phase transition through\nthe loss function, which behaves as an order parameter. A correlation function\nbetween real and reconstructed data is defined and found to be universal at the\ncritical point.",
-    "categories": [
-      "cond-mat.stat-mech",
-      "physics.data-an"
-    ],
-    "published": "2025-10-10T14:58:26+00:00"
-  },
-  {
-    "id": "http://arxiv.org/abs/2510.09435v1",
-    "title": "Cross-attention Secretly Performs Orthogonal Alignment in Recommendation Models",
-    "authors": [
-      "Hyunin Lee",
-      "Yong Zhang",
-      "Hoang Vu Nguyen",
-      "Xiaoyi Liu",
-      "Namyong Park",
-      "Christopher Jung",
-      "Rong Jin",
-      "Yang Wang",
-      "Zhigang Wang",
-      "Somayeh Sojoudi",
-      "Xue Feng"
-    ],
-    "summary": "Cross-domain sequential recommendation (CDSR) aims to align heterogeneous\nuser behavior sequences collected from different domains. While cross-attention\nis widely used to enhance alignment and improve recommendation performance, its\nunderlying mechanism is not fully understood. Most researchers interpret\ncross-attention as residual alignment, where the output is generated by\nremoving redundant and preserving non-redundant information from the query\ninput by referencing another domain data which is input key and value. Beyond\nthe prevailing view, we introduce Orthogonal Alignment, a phenomenon in which\ncross-attention discovers novel information that is not present in the query\ninput, and further argue that those two contrasting alignment mechanisms can\nco-exist in recommendation models We find that when the query input and output\nof cross-attention are orthogonal, model performance improves over 300\nexperiments. Notably, Orthogonal Alignment emerges naturally, without any\nexplicit orthogonality constraints. Our key insight is that Orthogonal\nAlignment emerges naturally because it improves scaling law. We show that\nbaselines additionally incorporating cross-attention module outperform\nparameter-matched baselines, achieving a superior accuracy-per-model parameter.\nWe hope these findings offer new directions for parameter-efficient scaling in\nmulti-modal research.",
-    "categories": [
-      "cs.LG",
-      "cs.IR"
-    ],
-    "published": "2025-10-10T14:45:39+00:00"
-  },
-  {
-    "id": "http://arxiv.org/abs/2510.09427v1",
-    "title": "Skyrmionic polarization textures in structured dielectric planar media",
-    "authors": [
-      "Francesco Di Colandrea",
-      "Lorenzo Marrucci",
-      "Filippo Cardano"
-    ],
-    "summary": "Skyrmionic patterns of optical fields have recently emerged across diverse\nphotonic platforms. Here, we show that such textures also arise in the\npolarization eigenstates of light propagation through flat dielectric devices\nwith an engineered, space-dependent optic-axis orientation. We focus on\ntwo-dimensional periodic structures, where propagation through multiple devices\nmaps onto quantum dynamics on a synthetic optical lattice. Adopting the\ncondensed-matter framework, a spatial period defines an effective Brillouin\nzone, and polarization eigenstates can be grouped in two bands, with the role\nof energy played by the opposite phase delay. When such eigenstates exhibit\nskyrmionic textures, the corresponding lattice model shows the topology of a\nChern insulator. These structures result from the interaction between the\noptical field and the medium and do not reflect a topological structure of the\nmedium itself. We validate these concepts in a system of three tunable\nliquid-crystal metasurfaces. Using quantum process tomography based on\nsupervised machine learning, we reconstruct the polarization eigenmodes over\none spatial period. We identify configurations of the devices' parameters that\nlead to topologically non-trivial bands, where we directly observe skyrmionic\neigenpolarization textures. Along the analogy with condensed matter, we also\nextract local observables of lattice models, such as the Berry curvature and\nthe quantum metric. We finally report a numerical simulation of an all-optical\nquantum Hall effect emerging when light propagates through a sequence of such\ndevices, arranged so as to mimic the effect of an external force on the\nlattice.",
-    "categories": [
-      "physics.optics"
-    ],
-    "published": "2025-10-10T14:33:49+00:00"
-  },
-  {
-    "id": "http://arxiv.org/abs/2510.09425v1",
-    "title": "Bandits with Single-Peaked Preferences and Limited Resources",
-    "authors": [
-      "Gur Keinan",
-      "Rotem Torkan",
-      "Omer Ben-Porat"
-    ],
-    "summary": "We study an online stochastic matching problem in which an algorithm\nsequentially matches $U$ users to $K$ arms, aiming to maximize cumulative\nreward over $T$ rounds under budget constraints. Without structural\nassumptions, computing the optimal matching is NP-hard, making online learning\ncomputationally infeasible. To overcome this barrier, we focus on\n\\emph{single-peaked preferences} -- a well-established structure in social\nchoice theory, where users' preferences are unimodal with respect to a common\norder over arms. We devise an efficient algorithm for the offline budgeted\nmatching problem, and leverage it into an efficient online algorithm with a\nregret of $\\tilde O(UKT^{2/3})$. Our approach relies on a novel PQ tree-based\norder approximation method. If the single-peaked structure is known, we develop\nan efficient UCB-like algorithm that achieves a regret bound of $\\tilde\nO(U\\sqrt{TK})$.",
+    "summary": "We present a systematic study of medical-domain interpretability in Large\nLanguage Models (LLMs). We study how the LLMs both represent and process\nmedical knowledge through four different interpretability techniques: (1) UMAP\nprojections of intermediate activations, (2) gradient-based saliency with\nrespect to the model weights, (3) layer lesioning/removal and (4) activation\npatching. We present knowledge maps of five LLMs which show, at a\ncoarse-resolution, where knowledge about patient's ages, medical symptoms,\ndiseases and drugs is stored in the models. In particular for Llama3.3-70B, we\nfind that most medical knowledge is processed in the first half of the model's\nlayers. In addition, we find several interesting phenomena: (i) age is often\nencoded in a non-linear and sometimes discontinuous manner at intermediate\nlayers in the models, (ii) the disease progression representation is\nnon-monotonic and circular at certain layers of the model, (iii) in\nLlama3.3-70B, drugs cluster better by medical specialty rather than mechanism\nof action, especially for Llama3.3-70B and (iv) Gemma3-27B and MedGemma-27B\nhave activations that collapse at intermediate layers but recover by the final\nlayers. These results can guide future research on fine-tuning, un-learning or\nde-biasing LLMs for medical tasks by suggesting at which layers in the model\nthese techniques should be applied.",
+    "primary_category": "cs.LG",
     "categories": [
       "cs.LG",
       "cs.AI"
     ],
-    "published": "2025-10-10T14:27:25+00:00"
+    "published": "2025-10-13T13:34:05+00:00",
+    "updated": "2025-10-13T13:34:05+00:00",
+    "journal_ref": null,
+    "doi": null
   },
   {
-    "id": "http://arxiv.org/abs/2510.09424v1",
-    "title": "The Speech-LLM Takes It All: A Truly Fully End-to-End Spoken Dialogue State Tracking Approach",
+    "entry_id": "http://arxiv.org/abs/2510.11370v1",
+    "title": "Stabilizing MoE Reinforcement Learning by Aligning Training and Inference Routers",
     "authors": [
-      "Nizar El Ghazal",
-      "Antoine Caubrière",
-      "Valentin Vielzeuf"
+      "Wenhan Ma",
+      "Hailin Zhang",
+      "Liang Zhao",
+      "Yifan Song",
+      "Yudong Wang",
+      "Zhifang Sui",
+      "Fuli Luo"
     ],
-    "summary": "This paper presents a comparative study of context management strategies for\nend-to-end Spoken Dialog State Tracking using Speech-LLMs. We systematically\nevaluate traditional multimodal context (combining text history and spoken\ncurrent turn), full spoken history, and compressed spoken history approaches.\nOur experiments on the SpokenWOZ corpus demonstrate that providing the full\nspoken conversation as input yields the highest performance among models of\nsimilar size, significantly surpassing prior methods. Furthermore, we show that\nattention-pooling-based compression of the spoken history offers a strong\ntrade-off, maintaining competitive accuracy with reduced context size. Detailed\nanalysis confirms that improvements stem from more effective context\nutilization.",
+    "summary": "Reinforcement learning (RL) has emerged as a crucial approach for enhancing\nthe capabilities of large language models. However, in Mixture-of-Experts (MoE)\nmodels, the routing mechanism often introduces instability, even leading to\ncatastrophic RL training collapse. We analyze the training-inference\nconsistency of MoE models and identify a notable discrepancy in routing\nbehaviors between the two phases. Moreover, even under identical conditions,\nthe routing framework can yield divergent expert selections across repeated\nforward passes. To address this foundational inconsistency, we propose Rollout\nRouting Replay (R3), a method that records routing distributions from the\ninference engine and replays them during training. R3 significantly reduces\ntraining-inference policy KL divergence and mitigates extreme discrepancies\nwithout compromising training speed. Extensive experiments on various settings\nconfirm that R3 succeeds in stabilizing RL training, preventing collapse and\noutperforming methods such as GSPO and TIS. We believe this work can offer a\nnew solution for stabilizing RL in MoE models.",
+    "primary_category": "cs.CL",
     "categories": [
       "cs.CL",
       "cs.AI",
+      "cs.LG"
+    ],
+    "published": "2025-10-13T13:11:27+00:00",
+    "updated": "2025-10-13T13:11:27+00:00",
+    "journal_ref": null,
+    "doi": null
+  },
+  {
+    "entry_id": "http://arxiv.org/abs/2510.11354v1",
+    "title": "Understanding the Generalization of Stochastic Gradient Adam in Learning Neural Networks",
+    "authors": [
+      "Xuan Tang",
+      "Han Zhang",
+      "Yuan Cao",
+      "Difan Zou"
+    ],
+    "summary": "Adam is a popular and widely used adaptive gradient method in deep learning,\nwhich has also received tremendous focus in theoretical research. However, most\nexisting theoretical work primarily analyzes its full-batch version, which\ndiffers fundamentally from the stochastic variant used in practice. Unlike SGD,\nstochastic Adam does not converge to its full-batch counterpart even with\ninfinitesimal learning rates. We present the first theoretical characterization\nof how batch size affects Adam's generalization, analyzing two-layer\nover-parameterized CNNs on image data. Our results reveal that while both Adam\nand AdamW with proper weight decay $\\lambda$ converge to poor test error\nsolutions, their mini-batch variants can achieve near-zero test error. We\nfurther prove Adam has a strictly smaller effective weight decay bound than\nAdamW, theoretically explaining why Adam requires more sensitive $\\lambda$\ntuning. Extensive experiments validate our findings, demonstrating the critical\nrole of batch size and weight decay in Adam's generalization performance.",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "stat.ML"
+    ],
+    "published": "2025-10-13T12:48:22+00:00",
+    "updated": "2025-10-13T12:48:22+00:00",
+    "journal_ref": null,
+    "doi": null
+  },
+  {
+    "entry_id": "http://arxiv.org/abs/2510.11347v1",
+    "title": "Multi-View Graph Feature Propagation for Privacy Preservation and Feature Sparsity",
+    "authors": [
+      "Etzion Harari",
+      "Moshe Unger"
+    ],
+    "summary": "Graph Neural Networks (GNNs) have demonstrated remarkable success in node\nclassification tasks over relational data, yet their effectiveness often\ndepends on the availability of complete node features. In many real-world\nscenarios, however, feature matrices are highly sparse or contain sensitive\ninformation, leading to degraded performance and increased privacy risks.\nFurthermore, direct exposure of information can result in unintended data\nleakage, enabling adversaries to infer sensitive information. To address these\nchallenges, we propose a novel Multi-view Feature Propagation (MFP) framework\nthat enhances node classification under feature sparsity while promoting\nprivacy preservation. MFP extends traditional Feature Propagation (FP) by\ndividing the available features into multiple Gaussian-noised views, each\npropagating information independently through the graph topology. The\naggregated representations yield expressive and robust node embeddings. This\nframework is novel in two respects: it introduces a mechanism that improves\nrobustness under extreme sparsity, and it provides a principled way to balance\nutility with privacy. Extensive experiments conducted on graph datasets\ndemonstrate that MFP outperforms state-of-the-art baselines in node\nclassification while substantially reducing privacy leakage. Moreover, our\nanalysis demonstrates that propagated outputs serve as alternative imputations\nrather than reconstructions of the original features, preserving utility\nwithout compromising privacy. A comprehensive sensitivity analysis further\nconfirms the stability and practical applicability of MFP across diverse\nscenarios. Overall, MFP provides an effective and privacy-aware framework for\ngraph learning in domains characterized by missing or sensitive features.",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "published": "2025-10-13T12:42:00+00:00",
+    "updated": "2025-10-13T12:42:00+00:00",
+    "journal_ref": null,
+    "doi": null
+  },
+  {
+    "entry_id": "http://arxiv.org/abs/2510.11345v1",
+    "title": "Part II: ROLL Flash -- Accelerating RLVR and Agentic Training with Asynchrony",
+    "authors": [
+      "Han Lu",
+      "Zichen Liu",
+      "Shaopan Xiong",
+      "Yancheng He",
+      "Wei Gao",
+      "Yanan Wu",
+      "Weixun Wang",
+      "Jiashun Liu",
+      "Yang Li",
+      "Haizhou Zhao",
+      "Ju Huang",
+      "Siran Yang",
+      "Xiaoyang Li",
+      "Yijia Luo",
+      "Zihe Liu",
+      "Ling Pan",
+      "Junchi Yan",
+      "Wei Wang",
+      "Wenbo Su",
+      "Jiamang Wang",
+      "Lin Qu",
+      "Bo Zheng"
+    ],
+    "summary": "Synchronous Reinforcement Learning (RL) post-training has emerged as a\ncrucial step for enhancing Large Language Models (LLMs) with diverse\ncapabilities. However, many systems designed to accelerate RL post-training\nstill suffer from low resource utilization and limited scalability. We present\nROLL Flash, a system that extends ROLL with native support for asynchronous RL\npost-training. ROLL Flash is built upon two core design principles:\nfine-grained parallelism and rollout-train decoupling. Guided by these\nprinciples, ROLL Flash provides flexible programming interfaces that enable a\nfully asynchronous training architecture and support efficient rollout\nmechanisms, including queue scheduling and environment-level asynchronous\nexecution. Through comprehensive theoretical analysis and extensive\nexperiments, we demonstrate that ROLL Flash significantly improves resource\nutilization and scalability over synchronous RL post-training. ROLL Flash\nachieves up to 2.24x speedup on RLVR tasks and 2.72x on agentic tasks, using\nthe same GPU budget as synchronous baselines. Furthermore, we implement several\npopular off-policy algorithms and verify that asynchronous training can achieve\nperformance on par with synchronous training.",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "published": "2025-10-13T12:41:27+00:00",
+    "updated": "2025-10-13T12:41:27+00:00",
+    "journal_ref": null,
+    "doi": null
+  },
+  {
+    "entry_id": "http://arxiv.org/abs/2510.11339v1",
+    "title": "Event-Aware Prompt Learning for Dynamic Graphs",
+    "authors": [
+      "Xingtong Yu",
+      "Ruijuan Liang",
+      "Xinming Zhang",
+      "Yuan Fang"
+    ],
+    "summary": "Real-world graph typically evolve via a series of events, modeling dynamic\ninteractions between objects across various domains. For dynamic graph\nlearning, dynamic graph neural networks (DGNNs) have emerged as popular\nsolutions. Recently, prompt learning methods have been explored on dynamic\ngraphs. However, existing methods generally focus on capturing the relationship\nbetween nodes and time, while overlooking the impact of historical events. In\nthis paper, we propose EVP, an event-aware dynamic graph prompt learning\nframework that can serve as a plug-in to existing methods, enhancing their\nability to leverage historical events knowledge. First, we extract a series of\nhistorical events for each node and introduce an event adaptation mechanism to\nalign the fine-grained characteristics of these events with downstream tasks.\nSecond, we propose an event aggregation mechanism to effectively integrate\nhistorical knowledge into node representations. Finally, we conduct extensive\nexperiments on four public datasets to evaluate and analyze EVP.",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "published": "2025-10-13T12:37:53+00:00",
+    "updated": "2025-10-13T12:37:53+00:00",
+    "journal_ref": null,
+    "doi": null
+  },
+  {
+    "entry_id": "http://arxiv.org/abs/2510.11335v1",
+    "title": "DiffStyleTS: Diffusion Model for Style Transfer in Time Series",
+    "authors": [
+      "Mayank Nagda",
+      "Phil Ostheimer",
+      "Justus Arweiler",
+      "Indra Jungjohann",
+      "Jennifer Werner",
+      "Dennis Wagner",
+      "Aparna Muraleedharan",
+      "Pouya Jafari",
+      "Jochen Schmid",
+      "Fabian Jirasek",
+      "Jakob Burger",
+      "Michael Bortz",
+      "Hans Hasse",
+      "Stephan Mandt",
+      "Marius Kloft",
+      "Sophie Fellenz"
+    ],
+    "summary": "Style transfer combines the content of one signal with the style of another.\nIt supports applications such as data augmentation and scenario simulation,\nhelping machine learning models generalize in data-scarce domains. While well\ndeveloped in vision and language, style transfer methods for time series data\nremain limited. We introduce DiffTSST, a diffusion-based framework that\ndisentangles a time series into content and style representations via\nconvolutional encoders and recombines them through a self-supervised\nattention-based diffusion process. At inference, encoders extract content and\nstyle from two distinct series, enabling conditional generation of novel\nsamples to achieve style transfer. We demonstrate both qualitatively and\nquantitatively that DiffTSST achieves effective style transfer. We further\nvalidate its real-world utility by showing that data augmentation with DiffTSST\nimproves anomaly detection in data-scarce regimes.",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG"
+    ],
+    "published": "2025-10-13T12:30:10+00:00",
+    "updated": "2025-10-13T12:30:10+00:00",
+    "journal_ref": null,
+    "doi": null
+  },
+  {
+    "entry_id": "http://arxiv.org/abs/2510.11330v1",
+    "title": "Diffusion-Link: Diffusion Probabilistic Model for Bridging the Audio-Text Modality Gap",
+    "authors": [
+      "KiHyun Nam",
+      "Jongmin Choi",
+      "Hyeongkeun Lee",
+      "Jungwoo Heo",
+      "Joon Son Chung"
+    ],
+    "summary": "Contrastive audio-language pretraining yields powerful joint representations,\nyet a persistent audio-text modality gap limits the benefits of coupling\nmultimodal encoders with large language models (LLMs). We present\nDiffusion-Link, a diffusion-based modality-bridging module that generatively\nmaps audio embeddings into the text-embedding distribution. The module is\ntrained at the output embedding from the frozen multimodal encoder and\nimplemented as a lightweight network with three residual MLP blocks. To assess\nthe effect of Diffusion-Link on multimodal encoder-LLM coupling, we evaluate on\nAutomatic Audio Captioning (AAC); to our knowledge, this is the first\napplication of diffusion-based modality bridging to AAC. We report two results.\n(1) Modality-gap analysis: on similarity and geometric criteria, Diffusion-Link\nreduces the modality gap the most among prior diffusion-based methods and shows\na collective migration of audio embeddings toward the text distribution. (2)\nDownstream AAC: attaching Diffusion-Link to the same multimodal LLM baseline\nachieves state-of-the-art on AudioCaps in both zero-shot and fully supervised\ncaptioning without external knowledge, with relative gains up to 52.5% and\n7.5%, respectively. These findings show that closing the modality gap is\npivotal for effective coupling between multimodal encoders and LLMs, and\ndiffusion-based modality bridging offers a promising direction beyond\nknowledge-retrieval-centric designs. Code will be released upon acceptance\nhttps://github.com/DevKiHyun/Diffusion-Link",
+    "primary_category": "cs.SD",
+    "categories": [
+      "cs.SD",
+      "cs.AI",
+      "cs.CL",
       "cs.LG",
       "eess.AS"
     ],
-    "published": "2025-10-10T14:27:01+00:00"
+    "published": "2025-10-13T12:25:33+00:00",
+    "updated": "2025-10-13T12:25:33+00:00",
+    "journal_ref": null,
+    "doi": null
+  },
+  {
+    "entry_id": "http://arxiv.org/abs/2510.11302v1",
+    "title": "When Does Supervised Training Pay Off? The Hidden Economics of Object Detection in the Era of Vision-Language Models",
+    "authors": [
+      "Samer Al-Hamadani"
+    ],
+    "summary": "Object detection systems have traditionally relied on supervised learning\nwith manually annotated bounding boxes, achieving high accuracy at the cost of\nsubstantial annotation investment. The emergence of Vision-Language Models\n(VLMs) offers an alternative paradigm enabling zero-shot detection through\nnatural language queries, eliminating annotation requirements but operating\nwith reduced accuracy. This paper presents the first comprehensive\ncost-effectiveness analysis comparing supervised detection (YOLO) with\nzero-shot VLM inference (Gemini Flash 2.5). Through systematic evaluation on\n1,000 stratified COCO images and 200 diverse product images spanning consumer\nelectronics and rare categories, combined with detailed Total Cost of Ownership\nmodeling, we establish quantitative break-even thresholds governing\narchitecture selection. Our findings reveal that supervised YOLO achieves 91.2%\naccuracy versus 68.5% for zero-shot Gemini on standard categories, representing\na 22.7 percentage point advantage that costs $10,800 in annotation for\n100-category systems. However, this advantage justifies investment only beyond\n55 million inferences, equivalent to 151,000 images daily for one year.\nZero-shot Gemini demonstrates 52.3% accuracy on diverse product categories\n(ranging from highly web-prevalent consumer electronics at 75-85% to rare\nspecialized equipment at 25-40%) where supervised YOLO achieves 0% due to\narchitectural constraints preventing detection of untrained classes. Cost per\nCorrect Detection analysis reveals substantially lower per-detection costs for\nGemini ($0.00050 vs $0.143) at 100,000 inferences despite accuracy deficits. We\ndevelop decision frameworks demonstrating that optimal architecture selection\ndepends critically on deployment volume, category stability, budget\nconstraints, and accuracy requirements rather than purely technical performance\nmetrics.",
+    "primary_category": "cs.CV",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "published": "2025-10-13T11:48:48+00:00",
+    "updated": "2025-10-13T11:48:48+00:00",
+    "journal_ref": null,
+    "doi": null
   }
 ]

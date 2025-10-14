@@ -1,175 +1,225 @@
 [
   {
-    "id": "http://arxiv.org/abs/2510.09485v1",
-    "title": "Locally Optimal Private Sampling: Beyond the Global Minimax",
+    "entry_id": "http://arxiv.org/abs/2510.11498v1",
+    "title": "ReLook: Vision-Grounded RL with a Multimodal LLM Critic for Agentic Web Coding",
     "authors": [
-      "Hrad Ghoukasian",
-      "Bonwoo Lee",
-      "Shahab Asoodeh"
+      "Yuhang Li",
+      "Chenchen Zhang",
+      "Ruilin Lv",
+      "Ao Liu",
+      "Ken Deng",
+      "Yuanxing Zhang",
+      "Jiaheng Liu",
+      "Wiggin Zhou",
+      "Bo Zhou"
     ],
-    "summary": "We study the problem of sampling from a distribution under local differential\nprivacy (LDP). Given a private distribution $P \\in \\mathcal{P}$, the goal is to\ngenerate a single sample from a distribution that remains close to $P$ in\n$f$-divergence while satisfying the constraints of LDP. This task captures the\nfundamental challenge of producing realistic-looking data under strong privacy\nguarantees. While prior work by Park et al. (NeurIPS'24) focuses on global\nminimax-optimality across a class of distributions, we take a local\nperspective. Specifically, we examine the minimax risk in a neighborhood around\na fixed distribution $P_0$, and characterize its exact value, which depends on\nboth $P_0$ and the privacy level. Our main result shows that the local minimax\nrisk is determined by the global minimax risk when the distribution class\n$\\mathcal{P}$ is restricted to a neighborhood around $P_0$. To establish this,\nwe (1) extend previous work from pure LDP to the more general functional LDP\nframework, and (2) prove that the globally optimal functional LDP sampler\nyields the optimal local sampler when constrained to distributions near $P_0$.\nBuilding on this, we also derive a simple closed-form expression for the\nlocally minimax-optimal samplers which does not depend on the choice of\n$f$-divergence. We further argue that this local framework naturally models\nprivate sampling with public data, where the public data distribution is\nrepresented by $P_0$. In this setting, we empirically compare our locally\noptimal sampler to existing global methods, and demonstrate that it\nconsistently outperforms global minimax samplers.",
+    "summary": "While Large Language Models (LLMs) excel at algorithmic code generation, they\nstruggle with front-end development, where correctness is judged on rendered\npixels and interaction. We present ReLook, an agentic, vision-grounded\nreinforcement learning framework that empowers an agent to close a robust\ngenerate--diagnose--refine loop by invoking a multimodal LLM (MLLM) as a tool.\nDuring training, the agent uses the MLLM-in-the-loop both as a visual\ncritic--scoring code with screenshots--and as a source of actionable,\nvision-grounded feedback; a strict zero-reward rule for invalid renders anchors\nrenderability and prevents reward hacking. To prevent behavioral collapse, we\nintroduce Forced Optimization, a strict acceptance rule that admits only\nimproving revisions, yielding monotonically better trajectories. At inference,\nwe decouple the critic and run a lightweight, critic-free self-edit cycle,\nkeeping latency comparable to base decoding while retaining most of the gains.\nAcross three widely used benchmarks, ReLook consistently outperforms strong\nbaselines in vision-grounded front-end code generation, highlighting the\nbenefits of agentic perception, visual rewards, and training-inference\ndecoupling.",
+    "primary_category": "cs.LG",
     "categories": [
       "cs.LG",
-      "cs.CR",
-      "cs.CY",
-      "cs.IT",
-      "math.IT",
-      "E.4; G.3; K.4.1"
+      "cs.CL"
     ],
-    "published": "2025-10-10T15:50:48+00:00"
+    "published": "2025-10-13T15:05:50+00:00",
+    "updated": "2025-10-13T15:05:50+00:00",
+    "journal_ref": null,
+    "doi": null
   },
   {
-    "id": "http://arxiv.org/abs/2510.09484v1",
-    "title": "CRPS-LAM: Regional ensemble weather forecasting from matching marginals",
+    "entry_id": "http://arxiv.org/abs/2510.11495v1",
+    "title": "How Reinforcement Learning After Next-Token Prediction Facilitates Learning",
     "authors": [
-      "Erik Larsson",
-      "Joel Oskarsson",
-      "Tomas Landelius",
-      "Fredrik Lindsten"
+      "Nikolaos Tsilivis",
+      "Eran Malach",
+      "Karen Ullrich",
+      "Julia Kempe"
     ],
-    "summary": "Machine learning for weather prediction increasingly relies on ensemble\nmethods to provide probabilistic forecasts. Diffusion-based models have shown\nstrong performance in Limited-Area Modeling (LAM) but remain computationally\nexpensive at sampling time. Building on the success of global weather\nforecasting models trained based on Continuous Ranked Probability Score (CRPS),\nwe introduce CRPS-LAM, a probabilistic LAM forecasting model trained with a\nCRPS-based objective. By sampling and injecting a single latent noise vector\ninto the model, CRPS-LAM generates ensemble members in a single forward pass,\nachieving sampling speeds up to 39 times faster than a diffusion-based model.\nWe evaluate the model on the MEPS regional dataset, where CRPS-LAM matches the\nlow errors of diffusion models. By retaining also fine-scale forecast details,\nthe method stands out as an effective approach for probabilistic regional\nweather forecasting",
+    "summary": "Recent advances in reasoning domains with neural networks have primarily been\nenabled by a training recipe that optimizes Large Language Models, previously\ntrained to predict the next-token in a sequence, with reinforcement learning\nalgorithms. We introduce a framework to study the success of this paradigm, and\nwe theoretically expose the optimization mechanisms by which reinforcement\nlearning improves over next-token prediction in this setting. We study learning\nfrom mixture distributions of short and long ``chain-of-thought'' sequences\nencoding a single task. In particular, when the task consists of predicting the\nparity of $d$ bits and long sequences are rare, we show how reinforcement\nlearning after next-token prediction enables autoregressive transformers to\ngeneralize, whereas mere next-token prediction requires extreme statistical or\ncomputational resources to do so. We further explain how reinforcement learning\nleverages increased test-time computation, manifested in longer responses, to\nfacilitate this learning process. In a simplified setting, we theoretically\nprove that autoregressive linear models following this training recipe can\nefficiently learn to predict the parity of $d$ bits as long as the proportion\nof long demonstrations in the data mix is not exponentially small in the input\ndimension $d$. Finally, we demonstrate these same phenomena in other settings,\nincluding the post-training of Llama-series models on mixture variations of\ncommon mathematical reasoning benchmarks.",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "stat.ML"
+    ],
+    "published": "2025-10-13T15:04:00+00:00",
+    "updated": "2025-10-13T15:04:00+00:00",
+    "journal_ref": null,
+    "doi": null
+  },
+  {
+    "entry_id": "http://arxiv.org/abs/2510.11491v1",
+    "title": "Constraint-Aware Reinforcement Learning via Adaptive Action Scaling",
+    "authors": [
+      "Murad Dawood",
+      "Usama Ahmed Siddiquie",
+      "Shahram Khorshidi",
+      "Maren Bennewitz"
+    ],
+    "summary": "Safe reinforcement learning (RL) seeks to mitigate unsafe behaviors that\narise from exploration during training by reducing constraint violations while\nmaintaining task performance. Existing approaches typically rely on a single\npolicy to jointly optimize reward and safety, which can cause instability due\nto conflicting objectives, or they use external safety filters that override\nactions and require prior system knowledge. In this paper, we propose a modular\ncost-aware regulator that scales the agent's actions based on predicted\nconstraint violations, preserving exploration through smooth action modulation\nrather than overriding the policy. The regulator is trained to minimize\nconstraint violations while avoiding degenerate suppression of actions. Our\napproach integrates seamlessly with off-policy RL methods such as SAC and TD3,\nand achieves state-of-the-art return-to-cost ratios on Safety Gym locomotion\ntasks with sparse costs, reducing constraint violations by up to 126 times\nwhile increasing returns by over an order of magnitude compared to prior\nmethods.",
+    "primary_category": "cs.RO",
+    "categories": [
+      "cs.RO",
+      "cs.LG",
+      "cs.SY",
+      "eess.SY"
+    ],
+    "published": "2025-10-13T14:59:28+00:00",
+    "updated": "2025-10-13T14:59:28+00:00",
+    "journal_ref": null,
+    "doi": null
+  },
+  {
+    "entry_id": "http://arxiv.org/abs/2510.11484v1",
+    "title": "Rescaling-Aware Training for Efficient Deployment of Deep Learning Models on Full-Integer Hardware",
+    "authors": [
+      "Lion Mueller",
+      "Alberto Garcia-Ortiz",
+      "Ardalan Najafi",
+      "Adam Fuks",
+      "Lennart Bamberg"
+    ],
+    "summary": "Integer AI inference significantly reduces computational complexity in\nembedded systems. Quantization-aware training (QAT) helps mitigate accuracy\ndegradation associated with post-training quantization but still overlooks the\nimpact of integer rescaling during inference, which is a hardware costly\noperation in integer-only AI inference. This work shows that rescaling cost can\nbe dramatically reduced post-training, by applying a stronger quantization to\nthe rescale multiplicands at no model-quality loss. Furthermore, we introduce\nRescale-Aware Training, a fine tuning method for ultra-low bit-width rescaling\nmultiplicands. Experiments show that even with 8x reduced rescaler widths, the\nfull accuracy is preserved through minimal incremental retraining. This enables\nmore energy-efficient and cost-efficient AI inference for resource-constrained\nembedded systems.",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "cs.AR"
+    ],
+    "published": "2025-10-13T14:55:34+00:00",
+    "updated": "2025-10-13T14:55:34+00:00",
+    "journal_ref": null,
+    "doi": null
+  },
+  {
+    "entry_id": "http://arxiv.org/abs/2510.11474v1",
+    "title": "Coordinated Strategies in Realistic Air Combat by Hierarchical Multi-Agent Reinforcement Learning",
+    "authors": [
+      "Ardian Selmonaj",
+      "Giacomo Del Rio",
+      "Adrian Schneider",
+      "Alessandro Antonucci"
+    ],
+    "summary": "Achieving mission objectives in a realistic simulation of aerial combat is\nhighly challenging due to imperfect situational awareness and nonlinear flight\ndynamics. In this work, we introduce a novel 3D multi-agent air combat\nenvironment and a Hierarchical Multi-Agent Reinforcement Learning framework to\ntackle these challenges. Our approach combines heterogeneous agent dynamics,\ncurriculum learning, league-play, and a newly adapted training algorithm. To\nthis end, the decision-making process is organized into two abstraction levels:\nlow-level policies learn precise control maneuvers, while high-level policies\nissue tactical commands based on mission objectives. Empirical results show\nthat our hierarchical approach improves both learning efficiency and combat\nperformance in complex dogfight scenarios.",
+    "primary_category": "cs.RO",
+    "categories": [
+      "cs.RO",
+      "cs.AI",
+      "cs.HC",
+      "cs.LG",
+      "cs.MA"
+    ],
+    "published": "2025-10-13T14:44:51+00:00",
+    "updated": "2025-10-13T14:44:51+00:00",
+    "journal_ref": null,
+    "doi": null
+  },
+  {
+    "entry_id": "http://arxiv.org/abs/2510.11472v1",
+    "title": "Differentiable Fast Top-K Selection for Large-Scale Recommendation",
+    "authors": [
+      "Yanjie Zhu",
+      "Zhen Zhang",
+      "Yunli Wang",
+      "Zhiqiang Wang",
+      "Yu Li",
+      "Rufan Zhou",
+      "Shiyang Wen",
+      "Peng Jiang",
+      "Chenhao Lin",
+      "Jian Yang"
+    ],
+    "summary": "Cascade ranking is a widely adopted paradigm in large-scale information\nretrieval systems for Top-K item selection. However, the Top-K operator is\nnon-differentiable, hindering end-to-end training. Existing methods include\nLearning-to-Rank approaches (e.g., LambdaLoss), which optimize ranking metrics\nlike NDCG and suffer from objective misalignment, and differentiable\nsorting-based methods (e.g., ARF, LCRON), which relax permutation matrices for\ndirect Top-K optimization but introduce gradient conflicts through matrix\naggregation. A promising alternative is to directly construct a differentiable\napproximation of the Top-K selection operator, bypassing the use of soft\npermutation matrices. However, even state-of-the-art differentiable Top-K\noperator (e.g., LapSum) require $O(n \\log n)$ complexity due to their\ndependence on sorting for solving the threshold. Thus, we propose DFTopK, a\nnovel differentiable Top-K operator achieving optimal $O(n)$ time complexity.\nBy relaxing normalization constraints, DFTopK admits a closed-form solution and\navoids sorting. DFTopK also avoids the gradient conflicts inherent in\ndifferentiable sorting-based methods. We evaluate DFTopK on both the public\nbenchmark RecFLow and an industrial system. Experimental results show that\nDFTopK significantly improves training efficiency while achieving superior\nperformance, which enables us to scale up training samples more efficiently. In\nthe online A/B test, DFTopK yielded a +1.77\\% revenue lift with the same\ncomputational budget compared to the baseline. To the best of our knowledge,\nthis work is the first to introduce differentiable Top-K operators into\nrecommendation systems and the first to achieve theoretically optimal\nlinear-time complexity for Top-K selection. We have open-sourced our\nimplementation to facilitate future research in both academia and industry.",
+    "primary_category": "cs.LG",
     "categories": [
       "cs.LG"
     ],
-    "published": "2025-10-10T15:48:31+00:00"
+    "published": "2025-10-13T14:40:49+00:00",
+    "updated": "2025-10-13T14:40:49+00:00",
+    "journal_ref": null,
+    "doi": null
   },
   {
-    "id": "http://arxiv.org/abs/2510.09477v1",
-    "title": "Efficient Autoregressive Inference for Transformer Probabilistic Models",
+    "entry_id": "http://arxiv.org/abs/2510.11471v1",
+    "title": "Iterative Amortized Inference: Unifying In-Context Learning and Learned Optimizers",
     "authors": [
-      "Conor Hassan",
-      "Nasrulloh Loka",
-      "Cen-You Li",
-      "Daolang Huang",
-      "Paul E. Chang",
-      "Yang Yang",
-      "Francesco Silvestrin",
-      "Samuel Kaski",
-      "Luigi Acerbi"
+      "Sarthak Mittal",
+      "Divyat Mahajan",
+      "Guillaume Lajoie",
+      "Mohammad Pezeshki"
     ],
-    "summary": "Transformer-based models for amortized probabilistic inference, such as\nneural processes, prior-fitted networks, and tabular foundation models, excel\nat single-pass marginal prediction. However, many real-world applications, from\nsignal interpolation to multi-column tabular predictions, require coherent\njoint distributions that capture dependencies between predictions. While purely\nautoregressive architectures efficiently generate such distributions, they\nsacrifice the flexible set-conditioning that makes these models powerful for\nmeta-learning. Conversely, the standard approach to obtain joint distributions\nfrom set-based models requires expensive re-encoding of the entire augmented\nconditioning set at each autoregressive step. We introduce a causal\nautoregressive buffer that preserves the advantages of both paradigms. Our\napproach decouples context encoding from updating the conditioning set. The\nmodel processes the context once and caches it. A dynamic buffer then captures\ntarget dependencies: as targets are incorporated, they enter the buffer and\nattend to both the cached context and previously buffered targets. This enables\nefficient batched autoregressive generation and one-pass joint log-likelihood\nevaluation. A unified training strategy allows seamless integration of\nset-based and autoregressive modes at minimal additional cost. Across synthetic\nfunctions, EEG signals, cognitive models, and tabular data, our method matches\npredictive accuracy of strong baselines while delivering up to 20 times faster\njoint sampling. Our approach combines the efficiency of autoregressive\ngenerative models with the representational power of set-based conditioning,\nmaking joint prediction practical for transformer-based probabilistic models.",
+    "summary": "Modern learning systems increasingly rely on amortized learning - the idea of\nreusing computation or inductive biases shared across tasks to enable rapid\ngeneralization to novel problems. This principle spans a range of approaches,\nincluding meta-learning, in-context learning, prompt tuning, learned optimizers\nand more. While motivated by similar goals, these approaches differ in how they\nencode and leverage task-specific information, often provided as in-context\nexamples. In this work, we propose a unified framework which describes how such\nmethods differ primarily in the aspects of learning they amortize - such as\ninitializations, learned updates, or predictive mappings - and how they\nincorporate task data at inference. We introduce a taxonomy that categorizes\namortized models into parametric, implicit, and explicit regimes, based on\nwhether task adaptation is externalized, internalized, or jointly modeled.\nBuilding on this view, we identify a key limitation in current approaches: most\nmethods struggle to scale to large datasets because their capacity to process\ntask data at inference (e.g., context length) is often limited. To address\nthis, we propose iterative amortized inference, a class of models that refine\nsolutions step-by-step over mini-batches, drawing inspiration from stochastic\noptimization. Our formulation bridges optimization-based meta-learning with\nforward-pass amortization in models like LLMs, offering a scalable and\nextensible foundation for general-purpose task adaptation.",
+    "primary_category": "cs.LG",
     "categories": [
-      "stat.ML",
-      "cs.LG"
-    ],
-    "published": "2025-10-10T15:32:58+00:00"
-  },
-  {
-    "id": "http://arxiv.org/abs/2510.09475v1",
-    "title": "Few-shot multi-token DreamBooth with LoRa for style-consistent character generation",
-    "authors": [
-      "Ruben Pascual",
-      "Mikel Sesma-Sara",
-      "Aranzazu Jurio",
-      "Daniel Paternain",
-      "Mikel Galar"
-    ],
-    "summary": "The audiovisual industry is undergoing a profound transformation as it is\nintegrating AI developments not only to automate routine tasks but also to\ninspire new forms of art. This paper addresses the problem of producing a\nvirtually unlimited number of novel characters that preserve the artistic style\nand shared visual traits of a small set of human-designed reference characters,\nthus broadening creative possibilities in animation, gaming, and related\ndomains. Our solution builds upon DreamBooth, a well-established fine-tuning\ntechnique for text-to-image diffusion models, and adapts it to tackle two core\nchallenges: capturing intricate character details beyond textual prompts and\nthe few-shot nature of the training data. To achieve this, we propose a\nmulti-token strategy, using clustering to assign separate tokens to individual\ncharacters and their collective style, combined with LoRA-based\nparameter-efficient fine-tuning. By removing the class-specific regularization\nset and introducing random tokens and embeddings during generation, our\napproach allows for unlimited character creation while preserving the learned\nstyle. We evaluate our method on five small specialized datasets, comparing it\nto relevant baselines using both quantitative metrics and a human evaluation\nstudy. Our results demonstrate that our approach produces high-quality, diverse\ncharacters while preserving the distinctive aesthetic features of the reference\ncharacters, with human evaluation further reinforcing its effectiveness and\nhighlighting the potential of our method.",
-    "categories": [
-      "cs.CV",
-      "cs.LG"
-    ],
-    "published": "2025-10-10T15:28:55+00:00"
-  },
-  {
-    "id": "http://arxiv.org/abs/2510.09474v1",
-    "title": "Multimodal Policy Internalization for Conversational Agents",
-    "authors": [
-      "Zhenhailong Wang",
-      "Jiateng Liu",
-      "Amin Fazel",
-      "Ritesh Sarkhel",
-      "Xing Fan",
-      "Xiang Li",
-      "Chenlei Guo",
-      "Heng Ji",
-      "Ruhi Sarikaya"
-    ],
-    "summary": "Modern conversational agents like ChatGPT and Alexa+ rely on predefined\npolicies specifying metadata, response styles, and tool-usage rules. As these\nLLM-based systems expand to support diverse business and user queries, such\npolicies, often implemented as in-context prompts, are becoming increasingly\ncomplex and lengthy, making faithful adherence difficult and imposing large\nfixed computational costs. With the rise of multimodal agents, policies that\ngovern visual and multimodal behaviors are critical but remain understudied.\nPrior prompt-compression work mainly shortens task templates and\ndemonstrations, while existing policy-alignment studies focus only on\ntext-based safety rules. We introduce Multimodal Policy Internalization (MPI),\na new task that internalizes reasoning-intensive multimodal policies into model\nparameters, enabling stronger policy-following without including the policy\nduring inference. MPI poses unique data and algorithmic challenges. We build\ntwo datasets spanning synthetic and real-world decision-making and tool-using\ntasks and propose TriMPI, a three-stage training framework. TriMPI first\ninjects policy knowledge via continual pretraining, then performs supervised\nfinetuning, and finally applies PolicyRollout, a GRPO-style reinforcement\nlearning extension that augments rollouts with policy-aware responses for\ngrounded exploration. TriMPI achieves notable gains in end-to-end accuracy,\ngeneralization, and robustness to forgetting. As the first work on multimodal\npolicy internalization, we provide datasets, training recipes, and\ncomprehensive evaluations to foster future research. Project page:\nhttps://mikewangwzhl.github.io/TriMPI.",
-    "categories": [
-      "cs.CL",
+      "cs.LG",
       "cs.AI"
     ],
-    "published": "2025-10-10T15:28:30+00:00"
+    "published": "2025-10-13T14:40:47+00:00",
+    "updated": "2025-10-13T14:40:47+00:00",
+    "journal_ref": null,
+    "doi": null
   },
   {
-    "id": "http://arxiv.org/abs/2510.09473v1",
-    "title": "D-TPT: Dimensional Entropy Maximization for Calibrating Test-Time Prompt Tuning in Vision-Language Models",
+    "entry_id": "http://arxiv.org/abs/2510.11442v1",
+    "title": "Reconstructing 12-Lead ECG from 3-Lead ECG using Variational Autoencoder to Improve Cardiac Disease Detection of Wearable ECG Devices",
     "authors": [
-      "Jisu Han",
-      "Wonjun Hwang"
+      "Xinyan Guan",
+      "Yongfan Lai",
+      "Jiarui Jin",
+      "Jun Li",
+      "Haoyu Wang",
+      "Qinghao Zhao",
+      "Deyun Zhang",
+      "Shijia Geng",
+      "Shenda Hong"
     ],
-    "summary": "Test-time adaptation paradigm provides flexibility towards domain shifts by\nperforming immediate adaptation on unlabeled target data from the source model.\nVision-Language Models (VLMs) leverage their generalization capabilities for\ndiverse downstream tasks, and test-time prompt tuning has emerged as a\nprominent solution for adapting VLMs. In this work, we explore contrastive VLMs\nand identify the modality gap caused by a single dominant feature dimension\nacross modalities. We observe that the dominant dimensions in both text and\nimage modalities exhibit high predictive sensitivity, and that constraining\ntheir influence can improve calibration error. Building on this insight, we\npropose dimensional entropy maximization that regularizes the distribution of\ntextual features toward uniformity to mitigate the dependency of dominant\ndimensions. Our method alleviates the degradation of calibration performance in\ntest-time prompt tuning, offering a simple yet effective solution to enhance\nthe reliability of VLMs in real-world deployment scenarios.",
+    "summary": "Twelve-lead electrocardiograms (ECGs) are the clinical gold standard for\ncardiac diagnosis, providing comprehensive spatial coverage of the heart\nnecessary to detect conditions such as myocardial infarction (MI). However,\ntheir lack of portability limits continuous and large-scale use. Three-lead ECG\nsystems are widely used in wearable devices due to their simplicity and\nmobility, but they often fail to capture pathologies in unmeasured regions. To\naddress this, we propose WearECG, a Variational Autoencoder (VAE) method that\nreconstructs twelve-lead ECGs from three leads: II, V1, and V5. Our model\nincludes architectural improvements to better capture temporal and spatial\ndependencies in ECG signals. We evaluate generation quality using MSE, MAE, and\nFrechet Inception Distance (FID), and assess clinical validity via a Turing\ntest with expert cardiologists. To further validate diagnostic utility, we\nfine-tune ECGFounder, a large-scale pretrained ECG model, on a multi-label\nclassification task involving over 40 cardiac conditions, including six\ndifferent myocardial infarction locations, using both real and generated\nsignals. Experiments on the MIMIC dataset show that our method produces\nphysiologically realistic and diagnostically informative signals, with robust\nperformance in downstream tasks. This work demonstrates the potential of\ngenerative modeling for ECG reconstruction and its implications for scalable,\nlow-cost cardiac screening.",
+    "primary_category": "cs.LG",
     "categories": [
-      "cs.CV",
-      "cs.LG"
-    ],
-    "published": "2025-10-10T15:27:44+00:00"
-  },
-  {
-    "id": "http://arxiv.org/abs/2510.09472v1",
-    "title": "Hybrid Models for Natural Language Reasoning: The Case of Syllogistic Logic",
-    "authors": [
-      "Manuel Vargas Guzmán",
-      "Jakub Szymanik",
-      "Maciej Malicki"
-    ],
-    "summary": "Despite the remarkable progress in neural models, their ability to\ngeneralize, a cornerstone for applications like logical reasoning, remains a\ncritical challenge. We delineate two fundamental aspects of this ability:\ncompositionality, the capacity to abstract atomic logical rules underlying\ncomplex inferences, and recursiveness, the aptitude to build intricate\nrepresentations through iterative application of inference rules. In the\nliterature, these two aspects are often confounded together under the umbrella\nterm of generalization. To sharpen this distinction, we investigated the\nlogical generalization capabilities of pre-trained large language models (LLMs)\nusing the syllogistic fragment as a benchmark for natural language reasoning.\nThough simple, this fragment provides a foundational yet expressive subset of\nformal logic that supports controlled evaluation of essential reasoning\nabilities. Our findings reveal a significant disparity: while LLMs demonstrate\nreasonable proficiency in recursiveness, they struggle with compositionality.\nTo overcome these limitations and establish a reliable logical prover, we\npropose a hybrid architecture integrating symbolic reasoning with neural\ncomputation. This synergistic interaction enables robust and efficient\ninference, neural components accelerate processing, while symbolic reasoning\nensures completeness. Our experiments show that high efficiency is preserved\neven with relatively small neural components. As part of our proposed\nmethodology, this analysis gives a rationale and highlights the potential of\nhybrid models to effectively address key generalization barriers in neural\nreasoning systems.",
-    "categories": [
-      "cs.CL",
       "cs.LG",
-      "cs.LO"
-    ],
-    "published": "2025-10-10T15:27:29+00:00"
-  },
-  {
-    "id": "http://arxiv.org/abs/2510.09469v1",
-    "title": "Scalable Multi-Agent Path Finding using Collision-Aware Dynamic Alert Mask and a Hybrid Execution Strategy",
-    "authors": [
-      "Bharath Muppasani",
-      "Ritirupa Dey",
-      "Biplav Srivastava",
-      "Vignesh Narayanan"
-    ],
-    "summary": "Multi-agent pathfinding (MAPF) remains a critical problem in robotics and\nautonomous systems, where agents must navigate shared spaces efficiently while\navoiding conflicts. Traditional centralized algorithms that have global\ninformation, such as Conflict-Based Search (CBS), provide high-quality\nsolutions but become computationally expensive in large-scale scenarios due to\nthe combinatorial explosion of conflicts that need resolution. Conversely,\ndistributed approaches that have local information, particularly learning-based\nmethods, offer better scalability by operating with relaxed information\navailability, yet often at the cost of solution quality. To address these\nlimitations, we propose a hybrid framework that combines decentralized path\nplanning with a lightweight centralized coordinator. Our framework leverages\nreinforcement learning (RL) for decentralized planning, enabling agents to\nadapt their planning based on minimal, targeted alerts--such as static\nconflict-cell flags or brief conflict tracks--that are dynamically shared\ninformation from the central coordinator for effective conflict resolution. We\nempirically study the effect of the information available to an agent on its\nplanning performance. Our approach reduces the inter-agent information sharing\ncompared to fully centralized and distributed methods, while still consistently\nfinding feasible, collision-free solutions--even in large-scale scenarios\nhaving higher agent counts.",
-    "categories": [
-      "cs.MA",
       "cs.AI",
-      "cs.RO"
+      "68T05",
+      "I.2.6; I.2.7"
     ],
-    "published": "2025-10-10T15:25:40+00:00"
+    "published": "2025-10-13T14:14:37+00:00",
+    "updated": "2025-10-13T14:14:37+00:00",
+    "journal_ref": null,
+    "doi": null
   },
   {
-    "id": "http://arxiv.org/abs/2510.09468v1",
-    "title": "Geodesic Calculus on Latent Spaces",
+    "entry_id": "http://arxiv.org/abs/2510.11418v1",
+    "title": "Forward-Forward Autoencoder Architectures for Energy-Efficient Wireless Communications",
     "authors": [
-      "Florine Hartwig",
-      "Josua Sassen",
-      "Juliane Braunsmann",
-      "Martin Rumpf",
-      "Benedikt Wirth"
+      "Daniel Seifert",
+      "Onur Günlü",
+      "Rafael F. Schaefer"
     ],
-    "summary": "Latent manifolds of autoencoders provide low-dimensional representations of\ndata, which can be studied from a geometric perspective. We propose to describe\nthese latent manifolds as implicit submanifolds of some ambient latent space.\nBased on this, we develop tools for a discrete Riemannian calculus\napproximating classical geometric operators. These tools are robust against\ninaccuracies of the implicit representation often occurring in practical\nexamples. To obtain a suitable implicit representation, we propose to learn an\napproximate projection onto the latent manifold by minimizing a denoising\nobjective. This approach is independent of the underlying autoencoder and\nsupports the use of different Riemannian geometries on the latent manifolds.\nThe framework in particular enables the computation of geodesic paths\nconnecting given end points and shooting geodesics via the Riemannian\nexponential maps on latent manifolds. We evaluate our approach on various\nautoencoders trained on synthetic and real data.",
+    "summary": "The application of deep learning to the area of communications systems has\nbeen a growing field of interest in recent years. Forward-forward (FF) learning\nis an efficient alternative to the backpropagation (BP) algorithm, which is the\ntypically used training procedure for neural networks. Among its several\nadvantages, FF learning does not require the communication channel to be\ndifferentiable and does not rely on the global availability of partial\nderivatives, allowing for an energy-efficient implementation. In this work, we\ndesign end-to-end learned autoencoders using the FF algorithm and numerically\nevaluate their performance for the additive white Gaussian noise and Rayleigh\nblock fading channels. We demonstrate their competitiveness with BP-trained\nsystems in the case of joint coding and modulation, and in a scenario where a\nfixed, non-differentiable modulation stage is applied. Moreover, we provide\nfurther insights into the design principles of the FF network, its training\nconvergence behavior, and significant memory and processing time savings\ncompared to BP-based approaches.",
+    "primary_category": "cs.IT",
     "categories": [
+      "cs.IT",
       "cs.LG",
-      "68T07, 53Z50 (Primary) 53B12 (Secondary)",
-      "I.2.6"
+      "math.IT"
     ],
-    "published": "2025-10-10T15:25:03+00:00"
+    "published": "2025-10-13T13:54:50+00:00",
+    "updated": "2025-10-13T13:54:50+00:00",
+    "journal_ref": null,
+    "doi": null
   },
   {
-    "id": "http://arxiv.org/abs/2510.09465v1",
-    "title": "Interpretable Machine Learning for Predicting Startup Funding, Patenting, and Exits",
+    "entry_id": "http://arxiv.org/abs/2510.11409v1",
+    "title": "Leveraging LLMs for Semi-Automatic Corpus Filtration in Systematic Literature Reviews",
     "authors": [
-      "Saeid Mashhadi",
-      "Amirhossein Saghezchi",
-      "Vesal Ghassemzadeh Kashani"
+      "Lucas Joos",
+      "Daniel A. Keim",
+      "Maximilian T. Fischer"
     ],
-    "summary": "This study develops an interpretable machine learning framework to forecast\nstartup outcomes, including funding, patenting, and exit. A firm-quarter panel\nfor 2010-2023 is constructed from Crunchbase and matched to U.S. Patent and\nTrademark Office (USPTO) data. Three horizons are evaluated: next funding\nwithin 12 months, patent-stock growth within 24 months, and exit through an\ninitial public offering (IPO) or acquisition within 36 months. Preprocessing is\nfit on a development window (2010-2019) and applied without change to later\ncohorts to avoid leakage. Class imbalance is addressed using inverse-prevalence\nweights and the Synthetic Minority Oversampling Technique for Nominal and\nContinuous features (SMOTE-NC). Logistic regression and tree ensembles,\nincluding Random Forest, XGBoost, LightGBM, and CatBoost, are compared using\nthe area under the precision-recall curve (PR-AUC) and the area under the\nreceiver operating characteristic curve (AUROC). Patent, funding, and exit\npredictions achieve AUROC values of 0.921, 0.817, and 0.872, providing\ntransparent and reproducible rankings for innovation finance.",
+    "summary": "The creation of systematic literature reviews (SLR) is critical for analyzing\nthe landscape of a research field and guiding future research directions.\nHowever, retrieving and filtering the literature corpus for an SLR is highly\ntime-consuming and requires extensive manual effort, as keyword-based searches\nin digital libraries often return numerous irrelevant publications. In this\nwork, we propose a pipeline leveraging multiple large language models (LLMs),\nclassifying papers based on descriptive prompts and deciding jointly using a\nconsensus scheme. The entire process is human-supervised and interactively\ncontrolled via our open-source visual analytics web interface, LLMSurver, which\nenables real-time inspection and modification of model outputs. We evaluate our\napproach using ground-truth data from a recent SLR comprising over 8,000\ncandidate papers, benchmarking both open and commercial state-of-the-art LLMs\nfrom mid-2024 and fall 2025. Results demonstrate that our pipeline\nsignificantly reduces manual effort while achieving lower error rates than\nsingle human annotators. Furthermore, modern open-source models prove\nsufficient for this task, making the method accessible and cost-effective.\nOverall, our work demonstrates how responsible human-AI collaboration can\naccelerate and enhance systematic literature reviews within academic workflows.",
+    "primary_category": "cs.LG",
     "categories": [
       "cs.LG",
-      "q-fin.GN"
+      "cs.DL",
+      "cs.HC"
     ],
-    "published": "2025-10-10T15:20:29+00:00"
+    "published": "2025-10-13T13:48:29+00:00",
+    "updated": "2025-10-13T13:48:29+00:00",
+    "journal_ref": null,
+    "doi": null
   }
 ]

@@ -1,175 +1,198 @@
 [
   {
-    "id": "http://arxiv.org/abs/2510.09578v1",
-    "title": "Three Birds with One Stone: Improving Performance, Convergence, and System Throughput with Nest",
+    "entry_id": "http://arxiv.org/abs/2510.11657v1",
+    "title": "An Eulerian Perspective on Straight-Line Sampling",
     "authors": [
-      "Yuqian Huo",
-      "David Quiroga",
-      "Anastasios Kyrillidis",
-      "Tirthak Patel"
+      "Panos Tsimpos",
+      "Youssef Marzouk"
     ],
-    "summary": "Variational quantum algorithms (VQAs) have the potential to demonstrate\nquantum utility on near-term quantum computers. However, these algorithms often\nget executed on the highest-fidelity qubits and computers to achieve the best\nperformance, causing low system throughput. Recent efforts have shown that VQAs\ncan be run on low-fidelity qubits initially and high-fidelity qubits later on\nto still achieve good performance. We take this effort forward and show that\ncarefully varying the qubit fidelity map of the VQA over its execution using\nour technique, Nest, does not just (1) improve performance (i.e., help achieve\nclose to optimal results), but also (2) lead to faster convergence. We also use\nNest to co-locate multiple VQAs concurrently on the same computer, thus (3)\nincreasing the system throughput, and therefore, balancing and optimizing three\nconflicting metrics simultaneously.",
+    "summary": "We study dynamic measure transport for generative modeling: specifically,\nflows induced by stochastic processes that bridge a specified source and target\ndistribution. The conditional expectation of the process' velocity defines an\nODE whose flow map achieves the desired transport. We ask \\emph{which processes\nproduce straight-line flows} -- i.e., flows whose pointwise acceleration\nvanishes and thus are exactly integrable with a first-order method? We provide\na concise PDE characterization of straightness as a balance between conditional\nacceleration and the divergence of a weighted covariance (Reynolds) tensor.\nUsing this lens, we fully characterize affine-in-time interpolants and show\nthat straightness occurs exactly under deterministic endpoint couplings. We\nalso derive necessary conditions that constrain flow geometry for general\nprocesses, offering broad guidance for designing transports that are easier to\nintegrate.",
+    "primary_category": "cs.LG",
     "categories": [
-      "quant-ph",
-      "cs.ET",
-      "cs.LG"
+      "cs.LG",
+      "stat.ML"
     ],
-    "published": "2025-10-10T17:30:58+00:00"
+    "published": "2025-10-13T17:33:58+00:00",
+    "updated": "2025-10-13T17:33:58+00:00",
+    "journal_ref": null,
+    "doi": null
   },
   {
-    "id": "http://arxiv.org/abs/2510.09577v1",
-    "title": "Dyna-Mind: Learning to Simulate from Experience for Better AI Agents",
+    "entry_id": "http://arxiv.org/abs/2510.11653v1",
+    "title": "MATH-Beyond: A Benchmark for RL to Expand Beyond the Base Model",
     "authors": [
-      "Xiao Yu",
-      "Baolin Peng",
-      "Michel Galley",
-      "Hao Cheng",
-      "Qianhui Wu",
-      "Janardhan Kulkarni",
-      "Suman Nath",
-      "Zhou Yu",
-      "Jianfeng Gao"
+      "Prasanna Mayilvahanan",
+      "Ricardo Dominguez-Olmedo",
+      "Thaddäus Wiedemer",
+      "Wieland Brendel"
     ],
-    "summary": "Reasoning models have recently shown remarkable progress in domains such as\nmath and coding. However, their expert-level abilities in math and coding\ncontrast sharply with their performance in long-horizon, interactive tasks such\nas web navigation and computer/phone-use. Inspired by literature on human\ncognition, we argue that current AI agents need ''vicarious trial and error'' -\nthe capacity to mentally simulate alternative futures before acting - in order\nto enhance their understanding and performance in complex interactive\nenvironments. We introduce Dyna-Mind, a two-stage training framework that\nexplicitly teaches (V)LM agents to integrate such simulation into their\nreasoning. In stage 1, we introduce Reasoning with Simulations (ReSim), which\ntrains the agent to generate structured reasoning traces from expanded search\ntrees built from real experience gathered through environment interactions.\nReSim thus grounds the agent's reasoning in faithful world dynamics and equips\nit with the ability to anticipate future states in its reasoning. In stage 2,\nwe propose Dyna-GRPO, an online reinforcement learning method to further\nstrengthen the agent's simulation and decision-making ability by using both\noutcome rewards and intermediate states as feedback from real rollouts.\nExperiments on two synthetic benchmarks (Sokoban and ALFWorld) and one\nrealistic benchmark (AndroidWorld) demonstrate that (1) ReSim effectively\ninfuses simulation ability into AI agents, and (2) Dyna-GRPO leverages outcome\nand interaction-level signals to learn better policies for long-horizon,\nplanning-intensive tasks. Together, these results highlight the central role of\nsimulation in enabling AI agents to reason, plan, and act more effectively in\nthe ever more challenging environments.",
-    "categories": [
-      "cs.CL",
-      "cs.AI",
-      "cs.CV"
-    ],
-    "published": "2025-10-10T17:30:18+00:00"
-  },
-  {
-    "id": "http://arxiv.org/abs/2510.09574v1",
-    "title": "Zero-shot Structure Learning and Planning for Autonomous Robot Navigation using Active Inference",
-    "authors": [
-      "Daria de tinguy",
-      "Tim Verbelen",
-      "Emilio Gamba",
-      "Bart Dhoedt"
-    ],
-    "summary": "Autonomous navigation in unfamiliar environments requires robots to\nsimultaneously explore, localise, and plan under uncertainty, without relying\non predefined maps or extensive training. We present a biologically inspired,\nActive Inference-based framework, Active Inference MAPping and Planning\n(AIMAPP). This model unifies mapping, localisation, and decision-making within\na single generative model. Inspired by hippocampal navigation, it uses\ntopological reasoning, place-cell encoding, and episodic memory to guide\nbehaviour. The agent builds and updates a sparse topological map online, learns\nstate transitions dynamically, and plans actions by minimising Expected Free\nEnergy. This allows it to balance goal-directed and exploratory behaviours. We\nimplemented a ROS-compatible navigation system that is sensor and\nrobot-agnostic, capable of integrating with diverse hardware configurations. It\noperates in a fully self-supervised manner, is resilient to drift, and supports\nboth exploration and goal-directed navigation without any pre-training. We\ndemonstrate robust performance in large-scale real and simulated environments\nagainst state-of-the-art planning models, highlighting the system's\nadaptability to ambiguous observations, environmental changes, and sensor\nnoise. The model offers a biologically inspired, modular solution to scalable,\nself-supervised navigation in unstructured settings. AIMAPP is available at\nhttps://github.com/decide-ugent/AIMAPP.",
-    "categories": [
-      "cs.RO"
-    ],
-    "published": "2025-10-10T17:28:12+00:00"
-  },
-  {
-    "id": "http://arxiv.org/abs/2510.09566v1",
-    "title": "Automated Evolutionary Optimization for Resource-Efficient Neural Network Training",
-    "authors": [
-      "Ilia Revin",
-      "Leon Strelkov",
-      "Vadim A. Potemkin",
-      "Ivan Kireev",
-      "Andrey Savchenko"
-    ],
-    "summary": "There are many critical challenges in optimizing neural network models,\nincluding distributed computing, compression techniques, and efficient\ntraining, regardless of their application to specific tasks. Solving such\nproblems is crucial because the need for scalable and resource-efficient models\nis increasing. To address these challenges, we have developed a new automated\nmachine learning (AutoML) framework, Parameter Efficient Training with Robust\nAutomation (PETRA). It applies evolutionary optimization to model architecture\nand training strategy. PETRA includes pruning, quantization, and loss\nregularization. Experimental studies on real-world data with financial event\nsequences, as well as image and time-series -- benchmarks, demonstrate PETRA's\nability to improve neural model performance and scalability -- namely, a\nsignificant decrease in model size (up to 75%) and latency (up to 33%), and an\nincrease in throughput (by 13%) without noticeable degradation in the target\nmetric.",
-    "categories": [
-      "cs.LG"
-    ],
-    "published": "2025-10-10T17:17:49+00:00"
-  },
-  {
-    "id": "http://arxiv.org/abs/2510.09561v1",
-    "title": "TC-LoRA: Temporally Modulated Conditional LoRA for Adaptive Diffusion Control",
-    "authors": [
-      "Minkyoung Cho",
-      "Ruben Ohana",
-      "Christian Jacobsen",
-      "Adityan Jothi",
-      "Min-Hung Chen",
-      "Z. Morley Mao",
-      "Ethem Can"
-    ],
-    "summary": "Current controllable diffusion models typically rely on fixed architectures\nthat modify intermediate activations to inject guidance conditioned on a new\nmodality. This approach uses a static conditioning strategy for a dynamic,\nmulti-stage denoising process, limiting the model's ability to adapt its\nresponse as the generation evolves from coarse structure to fine detail. We\nintroduce TC-LoRA (Temporally Modulated Conditional LoRA), a new paradigm that\nenables dynamic, context-aware control by conditioning the model's weights\ndirectly. Our framework uses a hypernetwork to generate LoRA adapters\non-the-fly, tailoring weight modifications for the frozen backbone at each\ndiffusion step based on time and the user's condition. This mechanism enables\nthe model to learn and execute an explicit, adaptive strategy for applying\nconditional guidance throughout the entire generation process. Through\nexperiments on various data domains, we demonstrate that this dynamic,\nparametric control significantly enhances generative fidelity and adherence to\nspatial conditions compared to static, activation-based methods. TC-LoRA\nestablishes an alternative approach in which the model's conditioning strategy\nis modified through a deeper functional adaptation of its weights, allowing\ncontrol to align with the dynamic demands of the task and generative stage.",
-    "categories": [
-      "cs.CV"
-    ],
-    "published": "2025-10-10T17:13:02+00:00"
-  },
-  {
-    "id": "http://arxiv.org/abs/2510.09551v1",
-    "title": "Titans Revisited: A Lightweight Reimplementation and Critical Analysis of a Test-Time Memory Model",
-    "authors": [
-      "Gavriel Di Nepi",
-      "Federico Siciliano",
-      "Fabrizio Silvestri"
-    ],
-    "summary": "By the end of 2024, Google researchers introduced Titans: Learning at Test\nTime, a neural memory model achieving strong empirical results across multiple\ntasks. However, the lack of publicly available code and ambiguities in the\noriginal description hinder reproducibility. In this work, we present a\nlightweight reimplementation of Titans and conduct a comprehensive evaluation\non Masked Language Modeling, Time Series Forecasting, and Recommendation tasks.\nOur results reveal that Titans does not always outperform established baselines\ndue to chunking. However, its Neural Memory component consistently improves\nperformance compared to attention-only models. These findings confirm the\nmodel's innovative potential while highlighting its practical limitations and\nraising questions for future research.",
+    "summary": "With the advent of DeepSeek-R1, a new wave of reinforcement learning (RL)\nmethods has emerged that seem to unlock stronger mathematical reasoning.\nHowever, a closer look at the open-source ecosystem reveals a critical\nlimitation: with sufficiently many draws (e.g., $\\texttt{pass@1024}$), many\nexisting base models already solve nearly all questions on widely used math\nbenchmarks such as MATH-500 and AIME 2024. This suggests that the RL\nfine-tuning methods prevalent in the LLM reasoning literature largely sharpen\nexisting solution modes rather than discovering entirely new ones. Such\nsharpening stands in contrast to the broader promise of RL: to foster\nexploration and to acquire new skills. To move beyond this plateau, we\nintroduce MATH-Beyond (MATH-B), a benchmark deliberately constructed to defeat\ncommon open-source models of up to 8B parameters even under large sampling\nbudgets. Improving performance on our benchmark via RL requires methods that\nlearn to reason in ways that go beyond base model capabilities in repeated\nsampling. Since the problems are drawn from subsets of DAPO-Math-17K and\nDeepScaleR datasets, they remain topically equivalent to standard high-school\nmath. Validating our premise, RL fine-tuned models such as\nNemotron-Research-Reasoning-Qwen-1.5B and DeepScaleR-1.5B-Preview perform\npoorly on MATH-B at $\\texttt{pass@1024}$, showing how existing approaches fall\nshort on tackling harder instances. We hope MATH-B will catalyze\nexploration-driven RL approaches that elicit deeper reasoning capabilities. We\nrelease MATH-B at https://huggingface.co/datasets/brendel-group/MATH-Beyond.",
+    "primary_category": "cs.LG",
     "categories": [
       "cs.LG",
       "cs.AI"
     ],
-    "published": "2025-10-10T17:03:24+00:00"
+    "published": "2025-10-13T17:30:54+00:00",
+    "updated": "2025-10-13T17:30:54+00:00",
+    "journal_ref": null,
+    "doi": null
   },
   {
-    "id": "http://arxiv.org/abs/2510.09543v1",
-    "title": "Guiding Energy-Efficient Locomotion through Impact Mitigation Rewards",
+    "entry_id": "http://arxiv.org/abs/2510.11640v1",
+    "title": "Continual Release of Densest Subgraphs: Privacy Amplification & Sublinear Space via Subsampling",
     "authors": [
-      "Chenghao Wang",
-      "Arjun Viswanathan",
-      "Eric Sihite",
-      "Alireza Ramezani"
+      "Felix Zhou"
     ],
-    "summary": "Animals achieve energy-efficient locomotion by their implicit passive\ndynamics, a marvel that has captivated roboticists for decades.Recently,\nmethods incorporated Adversarial Motion Prior (AMP) and Reinforcement learning\n(RL) shows promising progress to replicate Animals' naturalistic motion.\nHowever, such imitation learning approaches predominantly capture explicit\nkinematic patterns, so-called gaits, while overlooking the implicit passive\ndynamics. This work bridges this gap by incorporating a reward term guided by\nImpact Mitigation Factor (IMF), a physics-informed metric that quantifies a\nrobot's ability to passively mitigate impacts. By integrating IMF with AMP, our\napproach enables RL policies to learn both explicit motion trajectories from\nanimal reference motion and the implicit passive dynamic. We demonstrate energy\nefficiency improvements of up to 32%, as measured by the Cost of Transport\n(CoT), across both AMP and handcrafted reward structure.",
+    "summary": "We study the sublinear space continual release model for edge-differentially\nprivate (DP) graph algorithms, with a focus on the densest subgraph problem\n(DSG) in the insertion-only setting. Our main result is the first continual\nrelease DSG algorithm that matches the additive error of the best static DP\nalgorithms and the space complexity of the best non-private streaming\nalgorithms, up to constants. The key idea is a refined use of subsampling that\nsimultaneously achieves privacy amplification and sparsification, a connection\nnot previously formalized in graph DP. Via a simple black-box reduction to the\nstatic setting, we obtain both pure and approximate-DP algorithms with $O(\\log\nn)$ additive error and $O(n\\log n)$ space, improving both accuracy and space\ncomplexity over the previous state of the art. Along the way, we introduce\ngraph densification in the graph DP setting, adding edges to trigger earlier\nsubsampling, which removes the extra logarithmic factors in error and space\nincurred by prior work [ELMZ25]. We believe this simple idea may be of\nindependent interest.",
+    "primary_category": "cs.DS",
     "categories": [
-      "cs.RO"
+      "cs.DS",
+      "cs.CR",
+      "cs.LG"
     ],
-    "published": "2025-10-10T16:56:35+00:00"
+    "published": "2025-10-13T17:20:13+00:00",
+    "updated": "2025-10-13T17:20:13+00:00",
+    "journal_ref": null,
+    "doi": null
   },
   {
-    "id": "http://arxiv.org/abs/2510.09541v1",
-    "title": "SPG: Sandwiched Policy Gradient for Masked Diffusion Language Models",
+    "entry_id": "http://arxiv.org/abs/2510.11632v1",
+    "title": "NV3D: Leveraging Spatial Shape Through Normal Vector-based 3D Object Detection",
     "authors": [
-      "Chengyu Wang",
-      "Paria Rashidinejad",
-      "DiJia Su",
-      "Song Jiang",
-      "Sid Wang",
-      "Siyan Zhao",
-      "Cai Zhou",
-      "Shannon Zejiang Shen",
-      "Feiyu Chen",
-      "Tommi Jaakkola",
-      "Yuandong Tian",
-      "Bo Liu"
+      "Krittin Chaowakarn",
+      "Paramin Sangwongngam",
+      "Nang Htet Htet Aung",
+      "Chalie Charoenlarpnopparut"
     ],
-    "summary": "Diffusion large language models (dLLMs) are emerging as an efficient\nalternative to autoregressive models due to their ability to decode multiple\ntokens in parallel. However, aligning dLLMs with human preferences or\ntask-specific rewards via reinforcement learning (RL) is challenging because\ntheir intractable log-likelihood precludes the direct application of standard\npolicy gradient methods. While prior work uses surrogates like the evidence\nlower bound (ELBO), these one-sided approximations can introduce significant\npolicy gradient bias. To address this, we propose the Sandwiched Policy\nGradient (SPG) that leverages both an upper and a lower bound of the true\nlog-likelihood. Experiments show that SPG significantly outperforms baselines\nbased on ELBO or one-step estimation. Specifically, SPG improves the accuracy\nover state-of-the-art RL methods for dLLMs by 3.6% in GSM8K, 2.6% in MATH500,\n18.4% in Countdown and 27.0% in Sudoku.",
+    "summary": "Recent studies in 3D object detection for autonomous vehicles aim to enrich\nfeatures through the utilization of multi-modal setups or the extraction of\nlocal patterns within LiDAR point clouds. However, multi-modal methods face\nsignificant challenges in feature alignment, and gaining features locally can\nbe oversimplified for complex 3D object detection tasks. In this paper, we\npropose a novel model, NV3D, which utilizes local features acquired from voxel\nneighbors, as normal vectors computed per voxel basis using K-nearest neighbors\n(KNN) and principal component analysis (PCA). This informative feature enables\nNV3D to determine the relationship between the surface and pertinent target\nentities, including cars, pedestrians, or cyclists. During the normal vector\nextraction process, NV3D offers two distinct sampling strategies: normal vector\ndensity-based sampling and FOV-aware bin-based sampling, allowing elimination\nof up to 55% of data while maintaining performance. In addition, we applied\nelement-wise attention fusion, which accepts voxel features as the query and\nvalue and normal vector features as the key, similar to the attention\nmechanism. Our method is trained on the KITTI dataset and has demonstrated\nsuperior performance in car and cyclist detection owing to their spatial\nshapes. In the validation set, NV3D without sampling achieves 86.60% and 80.18%\nmean Average Precision (mAP), greater than the baseline Voxel R-CNN by 2.61%\nand 4.23% mAP, respectively. With both samplings, NV3D achieves 85.54% mAP in\ncar detection, exceeding the baseline by 1.56% mAP, despite roughly 55% of\nvoxels being filtered out.",
+    "primary_category": "cs.CV",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.LG",
+      "I.2.6; I.2.9; I.2.10; I.4.8; I.4.10; I.5.1; I.5.4"
+    ],
+    "published": "2025-10-13T17:13:06+00:00",
+    "updated": "2025-10-13T17:13:06+00:00",
+    "journal_ref": null,
+    "doi": null
+  },
+  {
+    "entry_id": "http://arxiv.org/abs/2510.11617v1",
+    "title": "Lecture Notes on Verifying Graph Neural Networks",
+    "authors": [
+      "François Schwarzentruber"
+    ],
+    "summary": "In these lecture notes, we first recall the connection between graph neural\nnetworks, Weisfeiler-Lehman tests and logics such as first-order logic and\ngraded modal logic. We then present a modal logic in which counting modalities\nappear in linear inequalities in order to solve verification tasks on graph\nneural networks. We describe an algorithm for the satisfiability problem of\nthat logic. It is inspired from the tableau method of vanilla modal logic,\nextended with reasoning in quantifier-free fragment Boolean algebra with\nPresburger arithmetic.",
+    "primary_category": "cs.LO",
+    "categories": [
+      "cs.LO",
+      "cs.LG"
+    ],
+    "published": "2025-10-13T16:57:20+00:00",
+    "updated": "2025-10-13T16:57:20+00:00",
+    "journal_ref": null,
+    "doi": null
+  },
+  {
+    "entry_id": "http://arxiv.org/abs/2510.11616v1",
+    "title": "Attention Factors for Statistical Arbitrage",
+    "authors": [
+      "Elliot L. Epstein",
+      "Rose Wang",
+      "Jaewon Choi",
+      "Markus Pelger"
+    ],
+    "summary": "Statistical arbitrage exploits temporal price differences between similar\nassets. We develop a framework to jointly identify similar assets through\nfactors, identify mispricing and form a trading policy that maximizes\nrisk-adjusted performance after trading costs. Our Attention Factors are\nconditional latent factors that are the most useful for arbitrage trading. They\nare learned from firm characteristic embeddings that allow for complex\ninteractions. We identify time-series signals from the residual portfolios of\nour factors with a general sequence model. Estimating factors and the arbitrage\ntrading strategy jointly is crucial to maximize profitability after trading\ncosts. In a comprehensive empirical study we show that our Attention Factor\nmodel achieves an out-of-sample Sharpe ratio above 4 on the largest U.S.\nequities over a 24-year period. Our one-step solution yields an unprecedented\nSharpe ratio of 2.3 net of transaction costs. We show that weak factors are\nimportant for arbitrage trading.",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "q-fin.CP",
+      "I.2.0"
+    ],
+    "published": "2025-10-13T16:56:30+00:00",
+    "updated": "2025-10-13T16:56:30+00:00",
+    "journal_ref": null,
+    "doi": null
+  },
+  {
+    "entry_id": "http://arxiv.org/abs/2510.11602v1",
+    "title": "Deconstructing Attention: Investigating Design Principles for Effective Language Modeling",
+    "authors": [
+      "Huiyin Xue",
+      "Nafise Sadat Moosavi",
+      "Nikolaos Aletras"
+    ],
+    "summary": "The success of Transformer language models is widely credited to their\ndot-product attention mechanism, which interweaves a set of key design\nprinciples: mixing information across positions (enabling multi-token\ninteractions), sequence-dependent activations (where attention weights adapt to\neach input), a specific mathematical form (dot-product similarities plus\nsoftmax weighting), and coupling of queries and keys to evolving hidden states\n(grounding attention in the current layer). However, the necessity of each of\nthese principles remains largely untested. In this work, we systematically\ndeconstruct attention by designing controlled variants that selectively relax\nthese principles, applied both uniformly across all layers and in hybrid\narchitectures where only some layers retain standard attention. Our empirical\nanalysis reveals that mechanisms for mixing tokens are indispensable, as their\nabsence collapses models to near-random behavior, while the exact mathematical\nform and sequence dependency can be substantially relaxed, especially when\npreserved in just a subset of layers. Surprisingly, even variants that fail in\nisolation can achieve robust performance when interleaved with standard\nattention, highlighting a cooperative effect. These findings deepen our\nunderstanding of what truly underpins attention's effectiveness and open new\navenues for simplifying language models without sacrificing performance.",
+    "primary_category": "cs.CL",
     "categories": [
       "cs.CL",
-      "cs.AI"
+      "cs.LG"
     ],
-    "published": "2025-10-10T16:52:25+00:00"
+    "published": "2025-10-13T16:42:14+00:00",
+    "updated": "2025-10-13T16:42:14+00:00",
+    "journal_ref": null,
+    "doi": null
   },
   {
-    "id": "http://arxiv.org/abs/2510.09539v1",
-    "title": "IF-D: A High-Frequency, General-Purpose Inertial Foundation Dataset for Self-Supervised Learning",
+    "entry_id": "http://arxiv.org/abs/2510.11599v1",
+    "title": "SemCSE-Multi: Multifaceted and Decodable Embeddings for Aspect-Specific and Interpretable Scientific Domain Mapping",
     "authors": [
-      "Patrick Ferreira",
-      "Paula Costa"
+      "Marc Brinner",
+      "Sina Zarrieß"
     ],
-    "summary": "We present IF-D, a large-scale inertial dataset designed to enable\nself-supervised and foundational learning for IMU time series. IF-D comprises\ncontinuous, long-duration multichannel recordings (accelerometer, gyroscope,\nmagnetometer) sampled at 200Hz using a UM7 IMU mounted inside a 3D-printed\nspherical enclosure that promotes diverse, free rotations during vehicle\ntraversal. The collection spans approximately 135 minutes of recording,\nyielding around 1.6 million samples across nine sensor channels. We describe\nthe data acquisition setup, preprocessing, and calibration procedures\n(six-orientation accelerometer calibration, stationary gyroscope bias\nestimation, and ellipsoid fitting for magnetometer hard-/soft-iron correction),\nand provide quantitative calibration results. IF-D is designed to mitigate\nplatform specific motion bias and expose models to both physical dynamics and\ntypical measurement noise, thereby facilitating robust representation learning\nand downstream tasks such as event detection, motion mode recognition, and\ninertial navigation.",
+    "summary": "We propose SemCSE-Multi, a novel unsupervised framework for generating\nmultifaceted embeddings of scientific abstracts, evaluated in the domains of\ninvasion biology and medicine. These embeddings capture distinct, individually\nspecifiable aspects in isolation, thus enabling fine-grained and controllable\nsimilarity assessments as well as adaptive, user-driven visualizations of\nscientific domains. Our approach relies on an unsupervised procedure that\nproduces aspect-specific summarizing sentences and trains embedding models to\nmap semantically related summaries to nearby positions in the embedding space.\nWe then distill these aspect-specific embedding capabilities into a unified\nembedding model that directly predicts multiple aspect embeddings from a\nscientific abstract in a single, efficient forward pass. In addition, we\nintroduce an embedding decoding pipeline that decodes embeddings back into\nnatural language descriptions of their associated aspects. Notably, we show\nthat this decoding remains effective even for unoccupied regions in\nlow-dimensional visualizations, thus offering vastly improved interpretability\nin user-centric settings.",
+    "primary_category": "cs.CL",
     "categories": [
-      "eess.SP",
-      "68T05, 94A12",
-      "I.2.6; I.5.4; I.4.8"
+      "cs.CL",
+      "cs.AI",
+      "cs.IR",
+      "cs.LG"
     ],
-    "published": "2025-10-10T16:50:57+00:00"
+    "published": "2025-10-13T16:38:20+00:00",
+    "updated": "2025-10-13T16:38:20+00:00",
+    "journal_ref": null,
+    "doi": null
   },
   {
-    "id": "http://arxiv.org/abs/2510.09536v1",
-    "title": "Evaluating Robustness of Large Language Models Against Multilingual Typographical Errors",
+    "entry_id": "http://arxiv.org/abs/2510.11593v1",
+    "title": "Hierarchical Qubit-Merging Transformer for Quantum Error Correction",
     "authors": [
-      "Yihong Liu",
-      "Raoyuan Zhao",
-      "Lena Altinger",
-      "Hinrich Schütze",
-      "Michael A. Hedderich"
+      "Seong-Joon Park",
+      "Hee-Youl Kwak",
+      "Yongjune Kim"
     ],
-    "summary": "Large language models (LLMs) are increasingly deployed in multilingual,\nreal-world applications with user inputs -- naturally introducing typographical\nerrors (typos). Yet most benchmarks assume clean input, leaving the robustness\nof LLMs to typos across languages largely underexplored. To address this gap,\nwe introduce MulTypo, a multilingual typo generation algorithm that simulates\nhuman-like errors based on language-specific keyboard layouts and typing\nbehavior. We evaluate 18 open-source LLMs across three model families and five\ndownstream tasks spanning language inference, multi-choice question answering,\nmathematical reasoning, and machine translation tasks. Our results show that\ntypos consistently degrade performance, particularly in generative tasks and\nthose requiring reasoning -- while the natural language inference task is\ncomparatively more robust. Instruction tuning improves clean-input performance\nbut may increase brittleness under noise. We also observe language-dependent\nrobustness: high-resource languages are generally more robust than low-resource\nones, and translation from English is more robust than translation into\nEnglish. Our findings underscore the need for noise-aware training and\nmultilingual robustness evaluation. We make our code and data publicly\navailable.",
+    "summary": "For reliable large-scale quantum computation, a quantum error correction\n(QEC) scheme must effectively resolve physical errors to protect logical\ninformation. Leveraging recent advances in deep learning, neural network-based\ndecoders have emerged as a promising approach to enhance the reliability of\nQEC. We propose the Hierarchical Qubit-Merging Transformer (HQMT), a novel and\ngeneral decoding framework that explicitly leverages the structural graph of\nstabilizer codes to learn error correlations across multiple scales. Our\narchitecture first computes attention locally on structurally related groups of\nstabilizers and then systematically merges these qubit-centric representations\nto build a global view of the error syndrome. The proposed HQMT achieves\nsubstantially lower logical error rates for surface codes by integrating a\ndedicated qubit-merging layer within the transformer architecture. Across\nvarious code distances, HQMT significantly outperforms previous neural\nnetwork-based QEC decoders as well as a powerful belief propagation with\nordered statistics decoding (BP+OSD) baseline. This hierarchical approach\nprovides a scalable and effective framework for surface code decoding,\nadvancing the realization of reliable quantum computing.",
+    "primary_category": "quant-ph",
     "categories": [
-      "cs.CL"
+      "quant-ph",
+      "cs.AI",
+      "cs.LG"
     ],
-    "published": "2025-10-10T16:49:12+00:00"
+    "published": "2025-10-13T16:31:46+00:00",
+    "updated": "2025-10-13T16:31:46+00:00",
+    "journal_ref": null,
+    "doi": null
+  },
+  {
+    "entry_id": "http://arxiv.org/abs/2510.11590v1",
+    "title": "Diffusion-DFL: Decision-focused Diffusion Models for Stochastic Optimization",
+    "authors": [
+      "Zihao Zhao",
+      "Christopher Yeh",
+      "Lingkai Kong",
+      "Kai Wang"
+    ],
+    "summary": "Decision-focused learning (DFL) integrates predictive modeling and\noptimization by training predictors to optimize the downstream decision target\nrather than merely minimizing prediction error. To date, existing DFL methods\ntypically rely on deterministic point predictions, which are often insufficient\nto capture the intrinsic stochasticity of real-world environments. To address\nthis challenge, we propose the first diffusion-based DFL approach, which trains\na diffusion model to represent the distribution of uncertain parameters and\noptimizes the decision by solving a stochastic optimization with samples drawn\nfrom the diffusion model. Our contributions are twofold. First, we formulate\ndiffusion DFL using the reparameterization trick, enabling end-to-end training\nthrough diffusion. While effective, it is memory and compute-intensive due to\nthe need to differentiate through the diffusion sampling process. Second, we\npropose a lightweight score function estimator that uses only several forward\ndiffusion passes and avoids backpropagation through the sampling. This follows\nfrom our results that backpropagating through stochastic optimization can be\napproximated by a weighted score function formulation. We empirically show that\nour diffusion DFL approach consistently outperforms strong baselines in\ndecision quality. The source code for all experiments is available at the\nproject repository: https://github.com/GT-KOALA/Diffusion_DFL.",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "stat.ML"
+    ],
+    "published": "2025-10-13T16:31:17+00:00",
+    "updated": "2025-10-13T16:31:17+00:00",
+    "journal_ref": null,
+    "doi": null
   }
 ]

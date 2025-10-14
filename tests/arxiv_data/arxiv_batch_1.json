@@ -1,160 +1,217 @@
 [
   {
-    "id": "http://arxiv.org/abs/2510.09599v1",
-    "title": "Prompting Test-Time Scaling Is A Strong LLM Reasoning Data Augmentation",
+    "entry_id": "http://arxiv.org/abs/2510.11713v1",
+    "title": "Are Large Reasoning Models Interruptible?",
     "authors": [
-      "Sondos Mahmoud Bsharat",
-      "Zhiqiang Shen"
+      "Tsung-Han Wu",
+      "Mihran Miroyan",
+      "David M. Chan",
+      "Trevor Darrell",
+      "Narges Norouzi",
+      "Joseph E. Gonzalez"
     ],
-    "summary": "Large language models (LLMs) have demonstrated impressive reasoning\ncapabilities when provided with chain-of-thought exemplars, but curating large\nreasoning datasets remains laborious and resource-intensive. In this work, we\nintroduce Prompting Test-Time Scaling (P-TTS), a simple yet effective\ninference-time data augmentation strategy for enhancing LLM reasoning through\nfinetuning. Rather than collecting thousands or even millions of examples,\nP-TTS leverages a small pool of only 90 manually selected reasoning instances\nand systematically varies exemplar augmentation through principled instruction\nprompting intensities at test time to synthesize diverse reasoning trajectory\ncontexts. Then we finetune the various sizes of Qwen-2.5 models on P-TTS data.\nAcross a suite of mathematical reasoning AIME2024 & 25, MATH500, and\nGPQA-Diamond, our P-TTS-7B and 32B models outperform the prior competitive\nbaselines like S1 and S1.1 (1K-shot), achieving absolute accuracy gains of\n+26.66% and +30.00% on AIME'24 (7B), and +13.34% and +6.67% on AIME'25 (7B);\nP-TTS-32B yields gains of +23.33% and +16.63% on AIME'24, and +26.63% and\n+3.33% on AIME'25 (vs. S1 and S1.1, respectively), with comparable or better\nperformance on MATH500 and GPQA-Diamond. We further show that P-TTS enhances\nzero-shot generalization accuracy on out-of-domain reasoning benchmarks of\nGaokao, Kaoyan, OlympiadBench, AMC23, GradeSchoolMath, and Minerva. Our\nanalysis suggests that test-time scaling effectively explores the latent space\nof reasoning patterns, amplifying LLM problem-solving with minimal annotation\noverhead, and further unlocking the reasoning potential and capabilities of\nLLMs. Prompting Test-Time Scaling offers a practical, low-cost way to elicit\nLLM reasoning in resource-constrained or rapidly evolving domains.",
+    "summary": "Large Reasoning Models (LRMs) excel at complex reasoning but are\ntraditionally evaluated in static, \"frozen world\" settings: model responses are\nassumed to be instantaneous, and the context of a request is presumed to be\nimmutable over the duration of the response. While generally true for\nshort-term tasks, the \"frozen world\" assumption breaks down in modern reasoning\ntasks such as assistive programming, where models may take hours to think\nthrough problems and code may change dramatically from the time the model\nstarts thinking to the model's final output. In this work, we challenge the\nfrozen world assumption and evaluate LRM robustness under two realistic dynamic\nscenarios: interruptions, which test the quality of the model's partial outputs\non a limited budget, and dynamic context, which tests model adaptation to\nin-flight changes. Across mathematics and programming benchmarks that require\nlong-form reasoning, static evaluations consistently overestimate robustness:\neven state-of-the-art LRMs, which achieve high accuracy in static settings, can\nfail unpredictably when interrupted or exposed to changing context, with\nperformance dropping by up to 60% when updates are introduced late in the\nreasoning process. Our analysis further reveals several novel failure modes,\nincluding reasoning leakage, where models fold the reasoning into their final\nanswer when interrupted; panic, where under time pressure models abandon\nreasoning entirely and return incorrect answers; and self-doubt, where\nperformance degrades while incorporating updated information.",
+    "primary_category": "cs.CL",
     "categories": [
       "cs.CL",
-      "cs.AI",
       "cs.LG"
     ],
-    "published": "2025-10-10T17:57:04+00:00"
+    "published": "2025-10-13T17:59:35+00:00",
+    "updated": "2025-10-13T17:59:35+00:00",
+    "journal_ref": null,
+    "doi": null
   },
   {
-    "id": "http://arxiv.org/abs/2510.09596v1",
-    "title": "BaNEL: Exploration Posteriors for Generative Modeling Using Only Negative Rewards",
+    "entry_id": "http://arxiv.org/abs/2510.11711v1",
+    "title": "Reinforced sequential Monte Carlo for amortised sampling",
     "authors": [
-      "Sangyun Lee",
-      "Brandon Amos",
-      "Giulia Fanti"
+      "Sanghyeok Choi",
+      "Sarthak Mittal",
+      "Víctor Elvira",
+      "Jinkyoo Park",
+      "Nikolay Malkin"
     ],
-    "summary": "Today's generative models thrive with large amounts of supervised data and\ninformative reward functions characterizing the quality of the generation. They\nwork under the assumptions that the supervised data provides knowledge to\npre-train the model, and the reward function provides dense information about\nhow to further improve the generation quality and correctness. However, in the\nhardest instances of important problems, two problems arise: (1) the base\ngenerative model attains a near-zero reward signal, and (2) calls to the reward\noracle are expensive. This setting poses a fundamentally different learning\nchallenge than standard reward-based post-training. To address this, we propose\nBaNEL (Bayesian Negative Evidence Learning), an algorithm that post-trains the\nmodel using failed attempts only, while minimizing the number of reward\nevaluations (NREs). Our method is based on the idea that the problem of\nlearning regularities underlying failures can be cast as another, in-loop\ngenerative modeling problem. We then leverage this model to assess whether new\ndata resembles previously seen failures and steer the generation away from\nthem. We show that BaNEL can improve model performance without observing a\nsingle successful sample on several sparse-reward tasks, outperforming existing\nnovelty-bonus approaches by up to several orders of magnitude in success rate,\nwhile using fewer reward evaluations.",
+    "summary": "This paper proposes a synergy of amortised and particle-based methods for\nsampling from distributions defined by unnormalised density functions. We state\na connection between sequential Monte Carlo (SMC) and neural sequential\nsamplers trained by maximum-entropy reinforcement learning (MaxEnt RL), wherein\nlearnt sampling policies and value functions define proposal kernels and twist\nfunctions. Exploiting this connection, we introduce an off-policy RL training\nprocedure for the sampler that uses samples from SMC -- using the learnt\nsampler as a proposal -- as a behaviour policy that better explores the target\ndistribution. We describe techniques for stable joint training of proposals and\ntwist functions and an adaptive weight tempering scheme to reduce training\nsignal variance. Furthermore, building upon past attempts to use experience\nreplay to guide the training of neural samplers, we derive a way to combine\nhistorical samples with annealed importance sampling weights within a replay\nbuffer. On synthetic multi-modal targets (in both continuous and discrete\nspaces) and the Boltzmann distribution of alanine dipeptide conformations, we\ndemonstrate improvements in approximating the true distribution as well as\ntraining stability compared to both amortised and Monte Carlo methods.",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "stat.ML"
+    ],
+    "published": "2025-10-13T17:59:11+00:00",
+    "updated": "2025-10-13T17:59:11+00:00",
+    "journal_ref": null,
+    "doi": null
+  },
+  {
+    "entry_id": "http://arxiv.org/abs/2510.11709v1",
+    "title": "Adversarial Attacks Leverage Interference Between Features in Superposition",
+    "authors": [
+      "Edward Stevinson",
+      "Lucas Prieto",
+      "Melih Barsbey",
+      "Tolga Birdal"
+    ],
+    "summary": "Fundamental questions remain about when and why adversarial examples arise in\nneural networks, with competing views characterising them either as artifacts\nof the irregularities in the decision landscape or as products of sensitivity\nto non-robust input features. In this paper, we instead argue that adversarial\nvulnerability can stem from efficient information encoding in neural networks.\nSpecifically, we show how superposition - where networks represent more\nfeatures than they have dimensions - creates arrangements of latent\nrepresentations that adversaries can exploit. We demonstrate that adversarial\nperturbations leverage interference between superposed features, making attack\npatterns predictable from feature arrangements. Our framework provides a\nmechanistic explanation for two known phenomena: adversarial attack\ntransferability between models with similar training regimes and class-specific\nvulnerability patterns. In synthetic settings with precisely controlled\nsuperposition, we establish that superposition suffices to create adversarial\nvulnerability. We then demonstrate that these findings persist in a ViT trained\non CIFAR-10. These findings reveal adversarial vulnerability can be a byproduct\nof networks' representational compression, rather than flaws in the learning\nprocess or non-robust inputs.",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CV"
+    ],
+    "published": "2025-10-13T17:59:02+00:00",
+    "updated": "2025-10-13T17:59:02+00:00",
+    "journal_ref": null,
+    "doi": null
+  },
+  {
+    "entry_id": "http://arxiv.org/abs/2510.11696v1",
+    "title": "QeRL: Beyond Efficiency -- Quantization-enhanced Reinforcement Learning for LLMs",
+    "authors": [
+      "Wei Huang",
+      "Yi Ge",
+      "Shuai Yang",
+      "Yicheng Xiao",
+      "Huizi Mao",
+      "Yujun Lin",
+      "Hanrong Ye",
+      "Sifei Liu",
+      "Ka Chun Cheung",
+      "Hongxu Yin",
+      "Yao Lu",
+      "Xiaojuan Qi",
+      "Song Han",
+      "Yukang Chen"
+    ],
+    "summary": "We propose QeRL, a Quantization-enhanced Reinforcement Learning framework for\nlarge language models (LLMs). While RL is essential for LLMs' reasoning\ncapabilities, it is resource-intensive, requiring substantial GPU memory and\nlong rollout durations. QeRL addresses these issues by combining NVFP4\nquantization with Low-Rank Adaptation (LoRA), accelerating rollout phase of RL\nwhile reducing memory overhead. Beyond efficiency, our findings show that\nquantization noise increases policy entropy, enhancing exploration, and\nenabling the discovery of better strategies during RL. To further optimize\nexploration, QeRL introduces an Adaptive Quantization Noise (AQN) mechanism,\nwhich dynamically adjusts noise during training. Experiments demonstrate that\nQeRL delivers over 1.5 times speedup in the rollout phase. Moreover, this is\nthe first framework to enable RL training of a 32B LLM on a single H100 80GB\nGPU, while delivering overall speedups for RL training. It also achieves faster\nreward growth and higher final accuracy than 16-bit LoRA and QLoRA, while\nmatching the performance of full-parameter fine-tuning on mathematical\nbenchmarks such as GSM8K (90.8%) and MATH 500 (77.4%) in the 7B model. These\nresults establish QeRL as an efficient and effective framework for RL training\nin LLMs.",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "cs.CL",
+      "cs.CV"
+    ],
+    "published": "2025-10-13T17:55:09+00:00",
+    "updated": "2025-10-13T17:55:09+00:00",
+    "journal_ref": null,
+    "doi": null
+  },
+  {
+    "entry_id": "http://arxiv.org/abs/2510.11691v1",
+    "title": "Tight Regret Upper and Lower Bounds for Optimistic Hedge in Two-Player Zero-Sum Games",
+    "authors": [
+      "Taira Tsuchiya"
+    ],
+    "summary": "In two-player zero-sum games, the learning dynamic based on optimistic Hedge\nachieves one of the best-known regret upper bounds among strongly-uncoupled\nlearning dynamics. With an appropriately chosen learning rate, the social and\nindividual regrets can be bounded by $O(\\log(mn))$ in terms of the numbers of\nactions $m$ and $n$ of the two players. This study investigates the optimality\nof the dependence on $m$ and $n$ in the regret of optimistic Hedge. To this\nend, we begin by refining existing regret analysis and show that, in the\nstrongly-uncoupled setting where the opponent's number of actions is known,\nboth the social and individual regret bounds can be improved to $O(\\sqrt{\\log m\n\\log n})$. In this analysis, we express the regret upper bound as an\noptimization problem with respect to the learning rates and the coefficients of\ncertain negative terms, enabling refined analysis of the leading constants. We\nthen show that the existing social regret bound as well as these new social and\nindividual regret upper bounds cannot be further improved for optimistic Hedge\nby providing algorithm-dependent individual regret lower bounds. Importantly,\nthese social regret upper and lower bounds match exactly including the constant\nfactor in the leading term. Finally, building on these results, we improve the\nlast-iterate convergence rate and the dynamic regret of a learning dynamic\nbased on optimistic Hedge, and complement these bounds with algorithm-dependent\ndynamic regret lower bounds that match the improved bounds.",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "cs.GT",
+      "stat.ML"
+    ],
+    "published": "2025-10-13T17:52:01+00:00",
+    "updated": "2025-10-13T17:52:01+00:00",
+    "journal_ref": null,
+    "doi": null
+  },
+  {
+    "entry_id": "http://arxiv.org/abs/2510.11690v1",
+    "title": "Diffusion Transformers with Representation Autoencoders",
+    "authors": [
+      "Boyang Zheng",
+      "Nanye Ma",
+      "Shengbang Tong",
+      "Saining Xie"
+    ],
+    "summary": "Latent generative modeling, where a pretrained autoencoder maps pixels into a\nlatent space for the diffusion process, has become the standard strategy for\nDiffusion Transformers (DiT); however, the autoencoder component has barely\nevolved. Most DiTs continue to rely on the original VAE encoder, which\nintroduces several limitations: outdated backbones that compromise\narchitectural simplicity, low-dimensional latent spaces that restrict\ninformation capacity, and weak representations that result from purely\nreconstruction-based training and ultimately limit generative quality. In this\nwork, we explore replacing the VAE with pretrained representation encoders\n(e.g., DINO, SigLIP, MAE) paired with trained decoders, forming what we term\nRepresentation Autoencoders (RAEs). These models provide both high-quality\nreconstructions and semantically rich latent spaces, while allowing for a\nscalable transformer-based architecture. Since these latent spaces are\ntypically high-dimensional, a key challenge is enabling diffusion transformers\nto operate effectively within them. We analyze the sources of this difficulty,\npropose theoretically motivated solutions, and validate them empirically. Our\napproach achieves faster convergence without auxiliary representation alignment\nlosses. Using a DiT variant equipped with a lightweight, wide DDT head, we\nachieve strong image generation results on ImageNet: 1.51 FID at 256x256 (no\nguidance) and 1.13 at both 256x256 and 512x512 (with guidance). RAE offers\nclear advantages and should be the new default for diffusion transformer\ntraining.",
+    "primary_category": "cs.CV",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "published": "2025-10-13T17:51:39+00:00",
+    "updated": "2025-10-13T17:51:39+00:00",
+    "journal_ref": null,
+    "doi": null
+  },
+  {
+    "entry_id": "http://arxiv.org/abs/2510.11686v1",
+    "title": "Representation-Based Exploration for Language Models: From Test-Time to Post-Training",
+    "authors": [
+      "Jens Tuyls",
+      "Dylan J. Foster",
+      "Akshay Krishnamurthy",
+      "Jordan T. Ash"
+    ],
+    "summary": "Reinforcement learning (RL) promises to expand the capabilities of language\nmodels, but it is unclear if current RL techniques promote the discovery of\nnovel behaviors, or simply sharpen those already present in the base model. In\nthis paper, we investigate the value of deliberate exploration -- explicitly\nincentivizing the model to discover novel and diverse behaviors -- and aim to\nunderstand how the knowledge in pre-trained models can guide this search. Our\nmain finding is that exploration with a simple, principled,\nrepresentation-based bonus derived from the pre-trained language model's hidden\nstates significantly improves diversity and pass@k rates -- both for\npost-training, and in a novel inference-time scaling setting we introduce. For\ninference-time, exploration with representation-based diversity improves\nefficiency, consistently improving pass@k rates across a variety of models and\nreasoning tasks. For example, for Qwen-2.5-14b-Instruct we obtain over 50%\nimprovement in verifier efficiency on almost all tasks. For post-training, we\nshow that integrating this exploration strategy into an RL pipeline improves\nreasoning performance over that of the initial model and over standard RL\npost-training. For example, on AIME 2024, our post-trained\nQwen-2.5-7b-Instruct's pass@80 matches the pass@256 of GRPO on the same model,\ndemonstrating a 3x improvement in test-time sample efficiency. Overall, our\nfindings suggest that deliberate exploration -- with the right notion of\ndiversity -- is a practical path toward discovery of new behaviors beyond\nsharpening.",
+    "primary_category": "cs.LG",
     "categories": [
       "cs.LG",
       "cs.AI"
     ],
-    "published": "2025-10-10T17:55:03+00:00"
+    "published": "2025-10-13T17:49:05+00:00",
+    "updated": "2025-10-13T17:49:05+00:00",
+    "journal_ref": null,
+    "doi": null
   },
   {
-    "id": "http://arxiv.org/abs/2510.09595v1",
-    "title": "LiveOIBench: Can Large Language Models Outperform Human Contestants in Informatics Olympiads?",
+    "entry_id": "http://arxiv.org/abs/2510.11683v1",
+    "title": "Boundary-Guided Policy Optimization for Memory-efficient RL of Diffusion Large Language Models",
     "authors": [
-      "Kaijian Zou",
-      "Aaron Xiong",
-      "Yunxiang Zhang",
-      "Frederick Zhang",
-      "Yueqi Ren",
-      "Jirong Yang",
-      "Ayoung Lee",
-      "Shitanshu Bhushan",
-      "Lu Wang"
+      "Nianyi Lin",
+      "Jiajie Zhang",
+      "Lei Hou",
+      "Juanzi Li"
     ],
-    "summary": "Competitive programming problems increasingly serve as valuable benchmarks to\nevaluate the coding capabilities of large language models (LLMs) due to their\ncomplexity and ease of verification. Yet, current coding benchmarks face\nlimitations such as lack of exceptionally challenging problems, insufficient\ntest case coverage, reliance on online platform APIs that limit accessibility.\nTo address these issues, we introduce LiveOIBench, a comprehensive benchmark\nfeaturing 403 expert-curated Olympiad-level competitive programming problems,\neach with an average of 60 expert-designed test cases. The problems are sourced\ndirectly from 72 official Informatics Olympiads in different regions conducted\nbetween 2023 and 2025. LiveOIBench distinguishes itself through four key\nfeatures: (1) meticulously curated high-quality tasks with detailed subtask\nrubrics and extensive private test cases; (2) direct integration of elite\ncontestant performance data to enable informative comparison against\ntop-performing humans; (3) planned continuous, contamination-free updates from\nnewly released Olympiad problems; and (4) a self-contained evaluation system\nfacilitating offline and easy-to-reproduce assessments. Benchmarking 32 popular\ngeneral-purpose and reasoning LLMs, we find that GPT-5 achieves a notable\n81.76th percentile, a strong result that nonetheless falls short of top human\ncontestant performance, who usually place above 90th. In contrast, among\nopen-weight reasoning models, GPT-OSS-120B achieves only a 60th percentile,\nunderscoring significant capability disparities from frontier closed models.\nDetailed analyses indicate that robust reasoning models prioritize precise\nproblem analysis over excessive exploration, suggesting future models should\nemphasize structured analysis and minimize unnecessary exploration. All data,\ncode, and leaderboard results will be made publicly available on our website.",
-    "categories": [
-      "cs.AI",
-      "cs.CL",
-      "cs.LG"
-    ],
-    "published": "2025-10-10T17:54:24+00:00"
-  },
-  {
-    "id": "http://arxiv.org/abs/2510.09594v1",
-    "title": "MODE: Learning compositional representations of complex systems with Mixtures Of Dynamical Experts",
-    "authors": [
-      "Nathan Quiblier",
-      "Roy Friedman",
-      "Matthew Ricci"
-    ],
-    "summary": "Dynamical systems in the life sciences are often composed of complex mixtures\nof overlapping behavioral regimes. Cellular subpopulations may shift from\ncycling to equilibrium dynamics or branch towards different developmental\nfates. The transitions between these regimes can appear noisy and irregular,\nposing a serious challenge to traditional, flow-based modeling techniques which\nassume locally smooth dynamics. To address this challenge, we propose MODE\n(Mixture Of Dynamical Experts), a graphical modeling framework whose neural\ngating mechanism decomposes complex dynamics into sparse, interpretable\ncomponents, enabling both the unsupervised discovery of behavioral regimes and\naccurate long-term forecasting across regime transitions. Crucially, because\nagents in our framework can jump to different governing laws, MODE is\nespecially tailored to the aforementioned noisy transitions. We evaluate our\nmethod on a battery of synthetic and real datasets from computational biology.\nFirst, we systematically benchmark MODE on an unsupervised classification task\nusing synthetic dynamical snapshot data, including in noisy, few-sample\nsettings. Next, we show how MODE succeeds on challenging forecasting tasks\nwhich simulate key cycling and branching processes in cell biology. Finally, we\ndeploy our method on human, single-cell RNA sequencing data and show that it\ncan not only distinguish proliferation from differentiation dynamics but also\npredict when cells will commit to their ultimate fate, a key outstanding\nchallenge in computational biology.",
+    "summary": "A key challenge in applying reinforcement learning (RL) to diffusion large\nlanguage models (dLLMs) lies in the intractability of their likelihood\nfunctions, which are essential for the RL objective, necessitating\ncorresponding approximation in each training step. While existing methods\napproximate the log-likelihoods by their evidence lower bounds (ELBOs) via\ncustomized Monte Carlo (MC) sampling, the forward computational graphs of all\nMC samples need to be retained for the gradient computation of non-linear terms\nin the RL objective, resulting in significant memory overhead. This constraint\nrestricts feasible sample sizes, leading to imprecise likelihood approximations\nand ultimately distorting the RL objective. To overcome this limitation, we\npropose \\emph{Boundary-Guided Policy Optimization} (BGPO), a memory-efficient\nRL algorithm that maximizes a specially constructed lower bound of the\nELBO-based objective. This lower bound is carefully designed to satisfy two key\nproperties: (1) Linearity: it is formulated in a linear sum where each term\ndepends only on a single MC sample, thereby enabling gradient accumulation\nacross samples and ensuring constant memory usage; (2) Equivalence: Both the\nvalue and gradient of this lower bound are equal to those of the ELBO-based\nobjective in on-policy training, making it also an effective approximation for\nthe original RL objective. These properties allow BGPO to adopt a large MC\nsample size, resulting in more accurate likelihood approximations and improved\nRL objective estimation, which in turn leads to enhanced performance.\nExperiments show that BGPO significantly outperforms previous RL algorithms for\ndLLMs in math problem solving, code generation, and planning tasks.",
+    "primary_category": "cs.LG",
     "categories": [
       "cs.LG",
-      "q-bio.MN",
-      "37, 60",
-      "I.6.0; J.3"
-    ],
-    "published": "2025-10-10T17:52:31+00:00"
-  },
-  {
-    "id": "http://arxiv.org/abs/2510.09593v1",
-    "title": "STaTS: Structure-Aware Temporal Sequence Summarization via Statistical Window Merging",
-    "authors": [
-      "Disharee Bhowmick",
-      "Ranjith Ramanathan",
-      "Sathyanarayanan N. Aakur"
-    ],
-    "summary": "Time series data often contain latent temporal structure, transitions between\nlocally stationary regimes, repeated motifs, and bursts of variability, that\nare rarely leveraged in standard representation learning pipelines. Existing\nmodels typically operate on raw or fixed-window sequences, treating all time\nsteps as equally informative, which leads to inefficiencies, poor robustness,\nand limited scalability in long or noisy sequences. We propose STaTS, a\nlightweight, unsupervised framework for Structure-Aware Temporal Summarization\nthat adaptively compresses both univariate and multivariate time series into\ncompact, information-preserving token sequences. STaTS detects change points\nacross multiple temporal resolutions using a BIC-based statistical divergence\ncriterion, then summarizes each segment using simple functions like the mean or\ngenerative models such as GMMs. This process achieves up to 30x sequence\ncompression while retaining core temporal dynamics. STaTS operates as a\nmodel-agnostic preprocessor and can be integrated with existing unsupervised\ntime series encoders without retraining. Extensive experiments on 150+\ndatasets, including classification tasks on the UCR-85, UCR-128, and UEA-30\narchives, and forecasting on ETTh1 and ETTh2, ETTm1, and Electricity,\ndemonstrate that STaTS enables 85-90\\% of the full-model performance while\noffering dramatic reductions in computational cost. Moreover, STaTS improves\nrobustness under noise and preserves discriminative structure, outperforming\nuniform and clustering-based compression baselines. These results position\nSTaTS as a principled, general-purpose solution for efficient, structure-aware\ntime series modeling.",
-    "categories": [
-      "cs.LG",
-      "cs.CV"
-    ],
-    "published": "2025-10-10T17:51:47+00:00"
-  },
-  {
-    "id": "http://arxiv.org/abs/2510.09591v1",
-    "title": "A Multilingual Python Programming Language",
-    "authors": [
-      "Saad Ahmed Bazaz",
-      "Mirza Omer Beg"
-    ],
-    "summary": "All widely used and useful programming languages have a common problem. They\nrestrict entry on the basis of knowledge of the English language. The lack of\nknowledge of English poses a major hurdle to many newcomers who do not have the\nresources, in terms of time and money, to learn the English language. Studies\nshow that people learn better in their own language. Therefore, we propose a\nlanguage transpiler built on top of the Python programming language, called\nUniversalPython, which allows one to write Python in their own human language.\nWe demonstrate the ability to create an \"Urdu Python\" with this transpiler. In\nthe future, we aim to scale the language to encapsulate more human languages to\nincrease the availability of programming. The source code for this transpiler\nis open-source, and available at\nhttps://github.com/universalpython/universalpython",
-    "categories": [
-      "cs.PL"
-    ],
-    "published": "2025-10-10T17:49:39+00:00"
-  },
-  {
-    "id": "http://arxiv.org/abs/2510.09589v1",
-    "title": "Minimizing the Weighted Makespan with Restarts on a Single Machine",
-    "authors": [
-      "Aflatoun Amouzandeh",
-      "Klaus Jansen",
-      "Lis Pirotton",
-      "Rob van Stee",
-      "Corinna Wambsganz"
-    ],
-    "summary": "We consider the problem of minimizing the weighted makespan on a single\nmachine with restarts. Restarts are similar to preemptions but weaker: a job\ncan be interrupted, but then it has to be run again from the start instead of\nresuming at the point of interruption later. The objective is to minimize the\nweighted makespan, defined as the maximum weighted completion time of jobs.\n  We establish a lower bound of 1.4656 on the competitive ratio achievable by\ndeterministic online algorithms. For the case where all jobs have identical\nprocessing times, we design and analyze a deterministic online algorithm that\nimproves the competitive ratio to better than 1.3098. Finally, we prove a lower\nbound of 1.2344 for this case.",
-    "categories": [
-      "cs.DS",
-      "F.2.2"
-    ],
-    "published": "2025-10-10T17:45:34+00:00"
-  },
-  {
-    "id": "http://arxiv.org/abs/2510.09586v1",
-    "title": "Vision Language Models: A Survey of 26K Papers",
-    "authors": [
-      "Fengming Lin"
-    ],
-    "summary": "We present a transparent, reproducible measurement of research trends across\n26,104 accepted papers from CVPR, ICLR, and NeurIPS spanning 2023-2025. Titles\nand abstracts are normalized, phrase-protected, and matched against a\nhand-crafted lexicon to assign up to 35 topical labels and mine fine-grained\ncues about tasks, architectures, training regimes, objectives, datasets, and\nco-mentioned modalities. The analysis quantifies three macro shifts: (1) a\nsharp rise of multimodal vision-language-LLM work, which increasingly reframes\nclassic perception as instruction following and multi-step reasoning; (2)\nsteady expansion of generative methods, with diffusion research consolidating\naround controllability, distillation, and speed; and (3) resilient 3D and video\nactivity, with composition moving from NeRFs to Gaussian splatting and a\ngrowing emphasis on human- and agent-centric understanding. Within VLMs,\nparameter-efficient adaptation like prompting/adapters/LoRA and lightweight\nvision-language bridges dominate; training practice shifts from building\nencoders from scratch to instruction tuning and finetuning strong backbones;\ncontrastive objectives recede relative to cross-entropy/ranking and\ndistillation. Cross-venue comparisons show CVPR has a stronger 3D footprint and\nICLR the highest VLM share, while reliability themes such as efficiency or\nrobustness diffuse across areas. We release the lexicon and methodology to\nenable auditing and extension. Limitations include lexicon recall and\nabstract-only scope, but the longitudinal signals are consistent across venues\nand years.",
-    "categories": [
-      "cs.CV"
-    ],
-    "published": "2025-10-10T17:43:17+00:00"
-  },
-  {
-    "id": "http://arxiv.org/abs/2510.09583v1",
-    "title": "FSP-DETR: Few-Shot Prototypical Parasitic Ova Detection",
-    "authors": [
-      "Shubham Trehan",
-      "Udhav Ramachandran",
-      "Akash Rao",
-      "Ruth Scimeca",
-      "Sathyanarayanan N. Aakur"
-    ],
-    "summary": "Object detection in biomedical settings is fundamentally constrained by the\nscarcity of labeled data and the frequent emergence of novel or rare\ncategories. We present FSP-DETR, a unified detection framework that enables\nrobust few-shot detection, open-set recognition, and generalization to unseen\nbiomedical tasks within a single model. Built upon a class-agnostic DETR\nbackbone, our approach constructs class prototypes from original support images\nand learns an embedding space using augmented views and a lightweight\ntransformer decoder. Training jointly optimizes a prototype matching loss, an\nalignment-based separation loss, and a KL divergence regularization to improve\ndiscriminative feature learning and calibration under scarce supervision.\nUnlike prior work that tackles these tasks in isolation, FSP-DETR enables\ninference-time flexibility to support unseen class recognition, background\nrejection, and cross-task adaptation without retraining. We also introduce a\nnew ova species detection benchmark with 20 parasite classes and establish\nstandardized evaluation protocols. Extensive experiments across ova, blood\ncell, and malaria detection tasks demonstrate that FSP-DETR significantly\noutperforms prior few-shot and prototype-based detectors, especially in\nlow-shot and open-set scenarios.",
-    "categories": [
-      "cs.CV"
-    ],
-    "published": "2025-10-10T17:38:40+00:00"
-  },
-  {
-    "id": "http://arxiv.org/abs/2510.09580v1",
-    "title": "GraphMERT: Efficient and Scalable Distillation of Reliable Knowledge Graphs from Unstructured Data",
-    "authors": [
-      "Margarita Belova",
-      "Jiaxin Xiao",
-      "Shikhar Tuli",
-      "Niraj K. Jha"
-    ],
-    "summary": "Researchers have pursued neurosymbolic artificial intelligence (AI)\napplications for nearly three decades because symbolic components provide\nabstraction while neural components provide generalization. Thus, a marriage of\nthe two components can lead to rapid advancements in AI. Yet, the field has not\nrealized this promise since most neurosymbolic AI frameworks fail to scale. In\naddition, the implicit representations and approximate reasoning of neural\napproaches limit interpretability and trust. Knowledge graphs (KGs), a\ngold-standard representation of explicit semantic knowledge, can address the\nsymbolic side. However, automatically deriving reliable KGs from text corpora\nhas remained an open problem. We address these challenges by introducing\nGraphMERT, a tiny graphical encoder-only model that distills high-quality KGs\nfrom unstructured text corpora and its own internal representations. GraphMERT\nand its equivalent KG form a modular neurosymbolic stack: neural learning of\nabstractions; symbolic KGs for verifiable reasoning. GraphMERT + KG is the\nfirst efficient and scalable neurosymbolic model to achieve state-of-the-art\nbenchmark accuracy along with superior symbolic representations relative to\nbaselines.\n  Concretely, we target reliable domain-specific KGs that are both (1) factual\n(with provenance) and (2) valid (ontology-consistent relations with\ndomain-appropriate semantics). When a large language model (LLM), e.g.,\nQwen3-32B, generates domain-specific KGs, it falls short on reliability due to\nprompt sensitivity, shallow domain expertise, and hallucinated relations. On\ntext obtained from PubMed papers on diabetes, our 80M-parameter GraphMERT\nyields a KG with a 69.8% FActScore; a 32B-parameter baseline LLM yields a KG\nthat achieves only 40.2% FActScore. The GraphMERT KG also attains a higher\nValidityScore of 68.8%, versus 43.0% for the LLM baseline.",
-    "categories": [
       "cs.AI",
       "cs.CL"
     ],
-    "published": "2025-10-10T17:36:14+00:00"
+    "published": "2025-10-13T17:47:50+00:00",
+    "updated": "2025-10-13T17:47:50+00:00",
+    "journal_ref": null,
+    "doi": null
+  },
+  {
+    "entry_id": "http://arxiv.org/abs/2510.11677v1",
+    "title": "Chronologically Consistent Generative AI",
+    "authors": [
+      "Songrun He",
+      "Linying Lv",
+      "Asaf Manela",
+      "Jimmy Wu"
+    ],
+    "summary": "We introduce a family of chronologically consistent, instruction-following\nlarge language models to eliminate lookahead bias. Each model is trained only\non data available before a clearly defined knowledge-cutoff date, ensuring\nstrict temporal separation from any post-cutoff data. The resulting framework\noffers (i) a simple, conversational chat interface, (ii) fully open, fixed\nmodel weights that guarantee replicability, and (iii) a conservative lower\nbound on forecast accuracy, isolating the share of predictability that survives\nonce training leakage is removed. Together, these features provide researchers\nwith an easy-to-use generative AI tool useful for a wide range of prediction\ntasks that is free of lookahead bias.",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "q-fin.GN"
+    ],
+    "published": "2025-10-13T17:45:24+00:00",
+    "updated": "2025-10-13T17:45:24+00:00",
+    "journal_ref": null,
+    "doi": null
+  },
+  {
+    "entry_id": "http://arxiv.org/abs/2510.11676v1",
+    "title": "Accelerated stochastic first-order method for convex optimization under heavy-tailed noise",
+    "authors": [
+      "Chuan He",
+      "Zhaosong Lu"
+    ],
+    "summary": "We study convex composite optimization problems, where the objective function\nis given by the sum of a prox-friendly function and a convex function whose\nsubgradients are estimated under heavy-tailed noise. Existing work often\nemploys gradient clipping or normalization techniques in stochastic first-order\nmethods to address heavy-tailed noise. In this paper, we demonstrate that a\nvanilla stochastic algorithm -- without additional modifications such as\nclipping or normalization -- can achieve optimal complexity for these problems.\nIn particular, we establish that an accelerated stochastic proximal subgradient\nmethod achieves a first-order oracle complexity that is universally optimal for\nsmooth, weakly smooth, and nonsmooth convex optimization, as well as for\nstochastic convex optimization under heavy-tailed noise. Numerical experiments\nare further provided to validate our theoretical results.",
+    "primary_category": "math.OC",
+    "categories": [
+      "math.OC",
+      "cs.AI",
+      "cs.LG",
+      "stat.ML",
+      "49M05, 49M37, 90C25, 90C30"
+    ],
+    "published": "2025-10-13T17:45:05+00:00",
+    "updated": "2025-10-13T17:45:05+00:00",
+    "journal_ref": null,
+    "doi": null
   }
 ]
