@@ -26,10 +26,10 @@ def load_config():
         return _config_cache
 
     if IS_LOCAL:
-        env_path = os.path.join(os.path.dirname(__file__), "../.env")
+        env_path = os.path.join(os.path.dirname(__file__), "../../../.env")
         if os.path.exists(env_path):
             load_dotenv(env_path)
-        config_path = os.path.join(os.path.dirname(__file__), "../config/config.yaml")
+        config_path = os.path.join(os.path.dirname(__file__), "../../../config/config.yaml")
         if not os.path.exists(config_path):
             logger.error(f"Configuration file not found: {config_path}")
             raise FileNotFoundError(f"{config_path} not found")
@@ -53,8 +53,7 @@ ALLOW_RECREATE = config.get("allow_recreate_table", False)
 
 AWS_KEY = os.getenv("AWS_ACCESS_KEY_ID")
 AWS_SECRET = os.getenv("AWS_SECRET_ACCESS_KEY")
-REGION = os.getenv("AWS_REGION", "ap-southeast-2")
-
+REGION = os.getenv("AWS_REGION")
 dynamodb_args = {"region_name": REGION}
 if AWS_KEY and AWS_SECRET:
     dynamodb_args.update({
@@ -83,8 +82,14 @@ def lambda_handler(event, context):
     logger.info(f"Creating table '{TABLE_NAME}'...")
     table = dynamodb.create_table(
         TableName=TABLE_NAME,
-        KeySchema=[{"AttributeName": "entry_id", "KeyType": "HASH"}],
-        AttributeDefinitions=[{"AttributeName": "entry_id", "AttributeType": "S"}],
+        KeySchema=[
+            {"AttributeName": "category", "KeyType": "HASH"},  # Partition key
+            {"AttributeName": "entry_id", "KeyType": "RANGE"}  # Sort key
+        ],
+        AttributeDefinitions=[
+            {"AttributeName": "category", "AttributeType": "S"},
+            {"AttributeName": "entry_id", "AttributeType": "S"}
+            ],
         BillingMode="PAY_PER_REQUEST"
     )
 
