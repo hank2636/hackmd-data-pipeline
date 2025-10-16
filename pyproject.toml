@@ -28,4 +28,6 @@ dependencies = [
     "arxiv>=2.2.0",
     "pyyaml>=6.0.3",
     "moto>=5.1.14",
+    "psycopg2>=2.9.11",
+    "pydantic-settings>=2.11.0",
 ]
