@@ -57,7 +57,7 @@ class PsqlEngine(BaseModel):
     def execute_cmd(
         self,
         stmt: str,
-        params: tuple = None,  # 新增 params
+        params: tuple = None,
         cursor_factory=psycopg2.extras.NamedTupleCursor
     ) -> None:
         try:
