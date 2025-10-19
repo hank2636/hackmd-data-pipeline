@@ -35,3 +35,9 @@ Thumbs.db
 pytest_cache/
 *.log
 *.tmp
+
+layer/
+package_handler/
+lambda_layer.zip
+lambda_handler.zip
+package/
