@@ -2,15 +2,11 @@ import os
 import boto3
 import yaml
 
-AWS_REGION = os.environ.get("AWS_REGION")
-AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
-AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
-
 s3 = boto3.client("s3")
 
 def load_config():
     """下載 S3 上的 config.yaml 到 Lambda /tmp 目錄，並讀取內容"""
-    bucket_name = "hackmd-paper-bucket"
+    bucket_name = "arvix-paper-bucket"
     key = "config/config.yaml"
     local_path = "/tmp/config.yaml"
 
