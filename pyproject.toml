@@ -30,4 +30,7 @@ dependencies = [
     "moto>=5.1.14",
     "psycopg2>=2.9.11",
     "pydantic-settings>=2.11.0",
+    "fastapi>=0.119.0",
+    "uvicorn>=0.37.0",
+    "prometheus-client>=0.23.1",
 ]

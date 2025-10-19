@@ -1,3 +1,127 @@
+aws:
+  region: "ap-northeast-1"
+  s3_bucket: "hackmd-paper-bucket"
+  s3_prefix_raw: "raw/"
 
-dynamodb_table_name: "download_paper_entry_id"
-allow_recreate_table: true
+lambda:
+  # 每次 Lambda 要跑幾個領域
+  num_categories_per_run: 3
+
+source_papers:
+  max_results_goal: 1000 # 每個領域要抓多少文章
+  batch_size: 100 # S3 上每個檔案內的文章數量
+  s3_max_attempts: 3 # 每次上傳 S3 最多嘗試次數
+  initial_delay_seconds: 5 # 指數退避的初始延遲
+  lookback_months: 6 # 抓最近幾個月的文章 ID 來避免重複下載
+
+
+categories:
+  computer_science:
+    - cs.AI
+    - cs.LG
+    - cs.CV
+    - cs.CL
+    - cs.NE
+    - cs.RO
+    - cs.HC
+    - cs.SE
+    - cs.DS
+    - cs.DB
+    - cs.SY
+    - cs.OS
+    - cs.PF
+    - cs.PL
+    - cs.MS
+    - cs.CC
+    - cs.CG
+    - cs.LO
+    - cs.GT
+    - cs.MM
+    - cs.IT
+
+  mathematics:
+    - math.CO
+    - math.AG
+    - math.GT
+    - math.QA
+    - math.RA
+    - math.NT
+    - math.KT
+    - math.DG
+    - math.DS
+    - math.FA
+    - math.AP
+    - math.SP
+    - math.ST
+    - math.PR
+
+  statistics:
+    - stat.ML
+    - stat.TH
+    - stat.CO
+    - stat.AP
+    - stat.OT
+    - stat.ME
+
+  physics:
+    - physics.optics
+    - physics.bio-ph
+    - physics.gen-ph
+    - physics.acc-ph
+    - physics.chem-ph
+    - physics.class-ph
+    - physics.comp-ph
+    - physics.data-an
+    - physics.ed-ph
+    - physics.ins-det
+    - physics.med-ph
+    - physics.plasm-ph
+    - physics.space-ph
+
+  quantitative_biology:
+    - q-bio.BM
+    - q-bio.CB
+    - q-bio.GN
+    - q-bio.MN
+    - q-bio.NC
+    - q-bio.PE
+    - q-bio.QM
+    - q-bio.SC
+
+  quantitative_finance:
+    - q-fin.CP
+    - q-fin.EC
+    - q-fin.GN
+    - q-fin.MF
+    - q-fin.PM
+    - q-fin.RM
+    - q-fin.ST
+    - q-fin.TR
+
+  electrical_engineering:
+    - eess.AS
+    - eess.IV
+    - eess.SP
+    - eess.SY
+
+  astrophysics:
+    - astro-ph.CO
+    - astro-ph.GA
+    - astro-ph.HE
+    - astro-ph.IM
+    - astro-ph.SR
+
+  condensed_matter:
+    - cond-mat.mtrl-sci
+    - cond-mat.str-el
+    - cond-mat.supr-con
+    - cond-mat.quant-gas
+    - cond-mat.dis-nn
+    - cond-mat.soft
+    - cond-mat.stat-mech
+
+  high_energy_physics:
+    - hep-ex
+    - hep-lat
+    - hep-ph
+    - hep-th
