@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 env:
-  LAMBDAS_TO_DEPLOY: "collector"
+  LAMBDAS_TO_DEPLOY: "Collector"
 
 jobs:
   build-deploy:
@@ -46,8 +46,8 @@ jobs:
       - name: Deploy selected Lambdas
         run: |
           declare -A LAMBDA_MAP=(
-            ["collector"]="lambda_handler_collector.zip"
-            ["etl"]="lambda_handler_etl.zip"
+            ["Collector"]="lambda_handler_collector.zip"
+            ["ETL"]="lambda_handler_etl.zip"
             ["test"]="lambda_handler_test.zip"
           )
 
