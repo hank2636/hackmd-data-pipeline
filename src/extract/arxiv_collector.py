@@ -9,7 +9,6 @@ import boto3
 import yaml
 from datetime import datetime, timezone
 from src.core.db import get_pg
-from src.core.pg_engine import PsqlEngine
 
 pg = get_pg()
 
@@ -38,7 +37,7 @@ cfg = load_config()
 MAX_RESULTS_GOAL = cfg["source_papers"]["max_results_goal"]
 BATCH_SIZE = cfg["source_papers"]["batch_size"]
 S3_BUCKET = cfg["aws"]["s3_bucket"]
-print(S3_BUCKET)
+AWS_LAMBDA_FUNCTION_NAME = cfg["lambda"]["AWS_LAMBDA_FUNCTION_COLLECT"]
 MAX_ATTEMPTS = cfg["source_papers"]["s3_max_attempts"]
 INITIAL_DELAY_SECONDS = cfg["source_papers"]["initial_delay_seconds"]
 LOOKBACK_MONTHS = cfg["source_papers"]["lookback_months"]
@@ -194,7 +193,22 @@ def upload_batch_to_s3(s3_prefix, batch_data, batch_num, category):
                 raise last_exception
     return s3_key
 
+def invoke_next_lambda():
+    """Call Lambda 把剩下的做完"""
+    lambda_client = boto3.client("lambda")
 
+    function_name = os.environ["AWS_LAMBDA_FUNCTION_NAME"]
+    try:
+        response = lambda_client.invoke(
+            FunctionName=function_name,
+            InvocationType="Event",
+            Payload=json.dumps({})
+        )
+        logging.info(f"Successfully invoked next Lambda: {response}")
+    except Exception as e:
+        logging.error(f"Failed to invoke next Lambda: {e}")
+        
+        
 def run_lambda():
     """
     Lambda 入口
@@ -311,6 +325,7 @@ def run_lambda():
 
     remaining = get_pending_categories()
     if remaining:
-        logging.info("尚有領域未完成，觸發下一個 Lambda")
+        logging.info("還有領域沒抓取，觸發下一個 Lambda")
+        invoke_next_lambda()
     else:
-        logging.info("所有領域完成，Lambda 不再觸發")
+        logging.info("已完成所有領域")

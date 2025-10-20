@@ -4,8 +4,11 @@ aws:
   s3_prefix_raw: "raw/"
 
 lambda:
-  # 每次 Lambda 要跑幾個領域
-  num_categories_per_run: 3
+  num_categories_per_run: 3 # 每次 Lambda 要跑幾個領域
+  # lambda 的名稱
+  AWS_LAMBDA_FUNCTION_COLLECT: "Collector"
+  AWS_LAMBDA_FUNCTION_ETL: "ETL"
+  AWS_LAMBDA_FUNCTION_COLLECT: "Monitor"
 
 source_papers:
   max_results_goal: 1000 # 每個領域要抓多少文章
