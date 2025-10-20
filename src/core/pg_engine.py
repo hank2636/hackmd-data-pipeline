@@ -4,38 +4,37 @@ import psycopg2
 import psycopg2.extras
 from loguru import logger
 from pydantic import BaseModel, Field
-from dotenv import load_dotenv
 import os
 
-try:
-    PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
-except NameError:
-    PROJECT_ROOT = Path().resolve().parent
-
+# -------------------------------
+# 環境設定讀取
+# -------------------------------
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 ENV_PATH = PROJECT_ROOT / ".env"
 
-if not ENV_PATH.exists():
-    raise FileNotFoundError(f".env not found at {ENV_PATH}")
+# Lambda 上不存在 .env 就不 raise
+if ENV_PATH.exists():
+    from dotenv import load_dotenv
+    load_dotenv(dotenv_path=ENV_PATH)
 
-load_dotenv(dotenv_path=ENV_PATH)
+# 讀取環境變數（Lambda 或本機 .env 都能用）
+POSTGRES_DB = os.getenv("POSTGRES_DB")
+POSTGRES_USER = os.getenv("POSTGRES_USER")
+POSTGRES_PASSWORD = os.getenv("POSTGRES_PASSWORD")
+POSTGRES_SERVER = os.getenv("POSTGRES_SERVER")
+POSTGRES_PORT = int(os.getenv("POSTGRES_PORT", 5432))
 
-POSTGRES_DB: str = os.getenv("POSTGRES_DB")
-POSTGRES_USER: str = os.getenv("POSTGRES_USER")
-POSTGRES_PASSWORD: str = os.getenv("POSTGRES_PASSWORD")
-POSTGRES_SERVER: str = os.getenv("POSTGRES_SERVER")
-POSTGRES_PORT: int = os.getenv("POSTGRES_PORT")
-CONNECTION = None
-CURSOR = None
-
-
+# -------------------------------
+# PostgreSQL Engine
+# -------------------------------
 class PsqlEngine(BaseModel):
     dbname: Annotated[str, Field(default=POSTGRES_DB)]
     user: Annotated[str, Field(default=POSTGRES_USER)]
     password: Annotated[str, Field(default=POSTGRES_PASSWORD)]
     host: Annotated[str, Field(default=POSTGRES_SERVER)]
     port: Annotated[int, Field(default=POSTGRES_PORT)]
-    conn: Annotated[int, Field(default=CONNECTION)]
-    cursor: Annotated[int, Field(default=CURSOR)]
+    conn: Annotated[Any, Field(default=None)]
+    cursor: Annotated[Any, Field(default=None)]
 
     def model_post_init(self, context: Any):
         self.connect_db()
@@ -76,7 +75,6 @@ class PsqlEngine(BaseModel):
             self.conn.rollback()
         finally:
             self.close_connect()
-
 
     def execute_query(
         self,
@@ -125,8 +123,10 @@ class PsqlEngine(BaseModel):
 
     def close_connect(self) -> None:
         try:
-            self.cursor.close()
-            self.conn.close()
+            if self.cursor:
+                self.cursor.close()
+            if self.conn:
+                self.conn.close()
             self.cursor = None
             self.conn = None
         except Exception as e:

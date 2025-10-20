@@ -26,4 +26,4 @@ def create_s3_bucket_and_prefix(bucket_name: str, domain: str):
     s3.put_object(Bucket=bucket_name, Key=(prefix + ".keep"))
 
 if __name__ == "__main__":
-    create_s3_bucket_and_prefix("hackmd-paper-bucket", "cs_LG")
+    create_s3_bucket_and_prefix("arvix-paper-bucket", "cs_LG")

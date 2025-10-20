@@ -1,0 +1,57 @@
+name: Lambda CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  LAMBDAS_TO_DEPLOY: "collector"
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install uv
+        run: curl -Ls https://astral.sh/uv/install.sh | sh
+
+      - name: Set up Python environment
+        run: uv sync
+
+      - name: Run build script
+        run: bash ./build_lambda.sh
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-northeast-1
+
+      - name: Deploy Lambda Layer
+        run: |
+          aws lambda publish-layer-version \
+            --layer-name my-layer \
+            --zip-file fileb://lambda_layer.zip
+
+      - name: Deploy selected Lambdas
+        run: |
+          declare -A LAMBDA_MAP=(
+            ["collector"]="lambda_handler_collector.zip"
+            ["etl"]="lambda_handler_etl.zip"
+            ["test"]="lambda_handler_test.zip"
+          )
+
+          IFS=',' read -r -a LAMBDAS <<< "$LAMBDAS_TO_DEPLOY"
+          for fn in "${LAMBDAS[@]}"; do
+            zipfile="${LAMBDA_MAP[$fn]}"
+            echo "=== Deploying $fn ($zipfile) ==="
+            aws lambda update-function-code \
+              --function-name $fn \
+              --zip-file fileb://$zipfile \
+              --publish
+          done
