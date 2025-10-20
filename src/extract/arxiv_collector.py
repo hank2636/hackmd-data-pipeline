@@ -20,7 +20,7 @@ logging.getLogger("arxiv").setLevel(logging.WARNING)
 s3 = boto3.client("s3")
 
 def load_config():
-    bucket_name = "hackmd-paper-bucket"
+    bucket_name = "arvix-paper-bucket"
     key = "config/config.yaml"
     local_path = "/tmp/config.yaml"
 
@@ -38,6 +38,7 @@ cfg = load_config()
 MAX_RESULTS_GOAL = cfg["source_papers"]["max_results_goal"]
 BATCH_SIZE = cfg["source_papers"]["batch_size"]
 S3_BUCKET = cfg["aws"]["s3_bucket"]
+print(S3_BUCKET)
 MAX_ATTEMPTS = cfg["source_papers"]["s3_max_attempts"]
 INITIAL_DELAY_SECONDS = cfg["source_papers"]["initial_delay_seconds"]
 LOOKBACK_MONTHS = cfg["source_papers"]["lookback_months"]
