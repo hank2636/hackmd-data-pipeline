@@ -197,12 +197,11 @@ def invoke_next_lambda():
     """Call Lambda 把剩下的做完"""
     lambda_client = boto3.client("lambda")
 
-    function_name = os.environ["AWS_LAMBDA_FUNCTION_NAME"]
     try:
         response = lambda_client.invoke(
-            FunctionName=function_name,
+            FunctionName=AWS_LAMBDA_FUNCTION_NAME,
             InvocationType="Event",
-            Payload=json.dumps({})
+            Payload=json.dumps({"trigger": "manual"}).encode()
         )
         logging.info(f"Successfully invoked next Lambda: {response}")
     except Exception as e:
