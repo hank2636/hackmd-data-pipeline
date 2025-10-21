@@ -7,7 +7,8 @@ lambda:
   num_categories_per_run: 3 # 每次 Lambda 要跑幾個領域
   # lambda 的名稱
   AWS_LAMBDA_FUNCTION_COLLECT: "Collector"
-  AWS_LAMBDA_FUNCTION_ETL: "ETL"
+  # 以下設置在環境變數中, 多開 lambda 時比較方便, 不 hardcode
+  AWS_LAMBDA_FUNCTION_ETL: "ETL_A" # ETL_B ETL_C
   AWS_LAMBDA_FUNCTION_MONITOR: "Monitor"
 
 source_papers:
@@ -17,6 +18,9 @@ source_papers:
   initial_delay_seconds: 5 # 指數退避的初始延遲
   lookback_months: 6 # 抓最近幾個月的文章 ID 來避免重複下載
 
+etl:
+  pending_gz_batch: 10
+  etl_batch_size: 100
 
 categories:
   computer_science:
