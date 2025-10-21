@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 env:
-  LAMBDAS_TO_DEPLOY: "Collector"
+  LAMBDAS_TO_DEPLOY: "Collector,ETL_A,ETL_B"
 
 jobs:
   build-deploy:

@@ -6,14 +6,12 @@ logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
 def lambda_handler(event, context):
-    logger.info(f"--- Lambda 執行開始 ---")
-    logger.info(f"請求 ID: {context.aws_request_id}")
-    logger.info(f"收到的事件: {json.dumps(event)}")
+    logger.info(f"--- Collector Lambda 執行開始 ---")
     
     try:
         arxiv_collector.run_lambda()
         
-        logger.info("--- Lambda 執行成功結束 ---")
+        logger.info("--- Lambda 執行成功 ---")
         return {
             "statusCode": 200,
             "body": json.dumps({"status": "ok"})

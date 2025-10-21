@@ -110,10 +110,10 @@ class PsqlEngine(BaseModel):
                 self.cursor.mogrify(f"({placeholders})", value).decode("utf-8")
                 for value in values
             )
-            self.cursor.execute(f"insert into {table_name} values {args_str};")
+            self.cursor.execute(f"insert into {table_name} values {args_str} ON CONFLICT DO NOTHING;;")
             self.conn.commit()
         except Exception as e:
-            logger.error(e)
+            # logger.error(e)
             logger.error(
                 f"Error sql statement: insert into {table_name} values {args_str};"
             )
