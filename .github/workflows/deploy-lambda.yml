@@ -47,8 +47,8 @@ jobs:
         run: |
           declare -A LAMBDA_MAP=(
             ["Collector"]="lambda_handler_collector.zip"
-            ["ETL"]="lambda_handler_etl.zip"
-            ["test"]="lambda_handler_test.zip"
+            ["ETL_A"]="lambda_handler_etl.zip"
+            ["ETL_B"]="lambda_handler_etl.zip"
           )
 
           IFS=',' read -r -a LAMBDAS <<< "$LAMBDAS_TO_DEPLOY"
