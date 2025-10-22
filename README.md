@@ -134,7 +134,8 @@
 * `DB_PASSWORD`: 資料庫密碼
 * `DB_NAME`: 資料庫名稱
 * `CONFIG_BUCKET`: 存放 `config.yaml` 的 S3 儲存桶名稱
-* `CONFIG_KEY`: `config.yaml` 在 S3 儲存桶中的路徑
+
+本地測試請修改 env.example 為 .env 並填寫相關資訊。
 
 ## 部署方式
 
