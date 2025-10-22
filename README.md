@@ -42,6 +42,16 @@
 | topic | TEXT | 透過模型分析得出的更細分的主題領域。 |
 | s3_path | TEXT | 該筆資料原始來源在 S3 上的路徑，用於資料追蹤與回溯。 |
 
+CloudWatch 監控
+資料蒐集 部分
+![image](./docs/Collector.png)
+
+ETL 部分
+![image](./docs/ETL.png)
+
+grafana 監控資源
+![image](./docs/grafana.png)
+
 ## 系統架構
 
 #### 雲端基礎設施
