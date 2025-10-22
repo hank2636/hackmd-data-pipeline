@@ -4,6 +4,8 @@ initial.py
 1. 確認 .env 與 config.yaml 是否存在 (不存在就終止程式)
 2. 確認 Dynomodb 是否存在指定 table
 3. 若此 table 存在, 根據 ALLOW_RECREATE 參數去決定是否刪掉重建
+
+20251022 取消該程式, 先行保留 by Hank
 """
 
 import boto3
